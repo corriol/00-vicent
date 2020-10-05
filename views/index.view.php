@@ -1,57 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Movie FX</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/global.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <?php require 'partials/head.partial.php'?>
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Movie FX</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                </ul>
-
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-item nav-link mr-md-2" id="bd-versions" aria-haspopup="false"
-                           aria-expanded="false" href="http://movie/login">
-                            Log in
-                        </a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-item nav-link" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"
-                           href="">
-                            Register
-                        </a>
-
-                    </li>
-                    <li class="nav-item">
-                    </li>
-                </ul>
-                <form class="form-inline ml-2 my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-    </nav>
+    <?php require 'partials/header.partial.php'?>
 </header>
 <div class="container">
 </div>
@@ -282,11 +236,15 @@
             <div class="row pb-4">
                 <div class="col-md-12">
                     <h2>Our Partners</h2>
+                    <?php require 'inc/partners.php'; ?>
                     <div class="row">
-                        <div class="col-3"><img src="partners/company-1.png" alt=""></div>
-                        <div class="col-3"><img src="partners/company-2.png" alt=""></div>
-                        <div class="col-3"><img src="partners/company-3.png" alt=""></div>
-                        <div class="col-3"><img src="partners/company-4.png" alt=""></div>
+                        <?php
+                        shuffle($partners);
+                        $partners = array_slice($partners, 0, 4);
+                        foreach ($partners as $partner):  ?>
+                            <div class="col-3 text-center"><img style="height: 50px; width: auto" src="<?= PARTNER_PATH . "/" . $partner["logo"] ?>"
+                                                    alt="<?= $partner["name"] ?>"></div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -296,64 +254,7 @@
 
     <!-- /.row -->
 </div>
-<!-- FOOTER Start
-    ================================================== -->
 
-<footer class="bg-dark text-secondary pt-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h4>MOVIE FX</h4>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s
-                </p>
-                <h4 class="connect-heading">CONNECT WITH US</h4>
-                <ul class="connect list-group ml-2 list-group-horizontal">
-                    <li class="bg-dark list-group-item">
-                        <a class="facebook-icon" href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="bg-dark list-group-item">
-                        <a class="plus-icon" href="#">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </li>
-                    <li class="bg-dark list-group-item">
-                        <a class="twitter-icon" href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="bg-dark list-group-item">
-                        <a class="pinterest-icon" href="#">
-                            <i class="fa fa-pinterest"></i>
-                        </a>
-                    </li>
-                    <li class="bg-dark list-group-item">
-                        <a class="linkedin-icon" href="#">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>    <!-- End Of /.social-icon -->
-
-            </div> <!-- End Of /.Col-md-4 -->
-            <div class="col-md-6">
-                <h4>GET IN TOUCH</h4>
-
-                <p><i class="fa  fa-map-marker"></i> <span>La Marina Valley,</span>03780 Pego,
-                    Spain</p>
-                <p><i class="fa  fa-phone"></i> <span>Phone:</span> (+34) 940 123 456 </p>
-
-                <p><i class="fa  fa-mobile"></i> <span>Mobile:</span> (+34) 940 654 123 651</p>
-
-                <p class="mail"><i class="fa  fa-envelope"></i> <a href="http://movie/contact">Contact form</a></p>
-
-            </div> <!-- End Of Col-md-3 -->
-        </div> <!-- End Of /.row -->
-    </div> <!-- End Of /.Container -->
-</footer>
-
-
+<?php require 'partials/footer.partial.php'?>
 </body>
 </html>
