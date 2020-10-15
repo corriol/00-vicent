@@ -19,29 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Canvi del títol de la pàgina del blog">
-      <change afterPath="$PROJECT_DIR$/Screenshot_2020-10-05 Movie FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/movies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/partners.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partners.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/partners/microsoft-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partials/footer.partial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partials/head.partial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partials/header.partial.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partners.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genre-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/genre-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partners/company-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/partners/company-1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partners/company-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/partners/company-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partners/company-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/partners/company-3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partners/company-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/partners/company-4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-page.html" afterDir="false" />
+    <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
+      <change beforePath="$PROJECT_DIR$/views/movies.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +73,7 @@
       <workItem from="1601580503678" duration="3678000" />
       <workItem from="1601837149834" duration="810000" />
       <workItem from="1601838011571" duration="907000" />
-      <workItem from="1601907204275" duration="1118000" />
+      <workItem from="1601907204275" duration="1366000" />
     </task>
     <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
       <created>1601315413259</created>
@@ -103,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601315413259</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Primer commit seriós">
+      <created>1601908358222</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601908358223</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +110,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Canvi del títol de la pàgina del blog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Canvi del títol de la pàgina del blog" />
+    <MESSAGE value="Primer commit seriós" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primer commit seriós" />
   </component>
   <component name="WindowStateProjectService">
     <state x="757" y="441" width="399" height="150" key="NewPhpFileDialog" timestamp="1601838444925">
@@ -137,9 +124,10 @@
     </state>
     <state x="377" y="135" key="SettingsEditor/0.0.1920.1048@0.0.1920.1048" timestamp="1601837324171" />
     <state x="377" y="121" width="1022" height="732" key="SettingsEditor/0.0.1920.940@0.0.1920.940" timestamp="1601314885662" />
-    <state x="448" y="209" width="804" height="530" key="Vcs.Push.Dialog.v2" timestamp="1601315453310">
-      <screen x="0" y="0" width="1920" height="940" />
+    <state x="448" y="233" width="804" height="530" key="Vcs.Push.Dialog.v2" timestamp="1601908361338">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
+    <state x="448" y="233" key="Vcs.Push.Dialog.v2/0.0.1920.1048@0.0.1920.1048" timestamp="1601908361338" />
     <state x="448" y="209" width="804" height="530" key="Vcs.Push.Dialog.v2/0.0.1920.940@0.0.1920.940" timestamp="1601315453310" />
     <state x="623" y="226" width="672" height="756" key="search.everywhere.popup" timestamp="1601582897467">
       <screen x="0" y="0" width="1920" height="1048" />

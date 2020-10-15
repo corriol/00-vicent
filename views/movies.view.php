@@ -28,7 +28,10 @@
                 <table class="table">
                     <tr>
                         <th>Poster</th>
-                        <th>Title <i class="fa fa-arrow-down"></i><i class="fa fa-arrow-up"></i></th>
+                        <th>Title
+                            <a href="..."><i class="fa fa-arrow-down"></i></a>
+                            <a href="..."><i class="fa fa-arrow-up"></i></a>
+                        </th>
                         <th>Tagline</th>
                         <th>Release date <i class="fa fa-arrow-down"></i><i class="fa fa-arrow-up"></i></th>
                     </tr>
