@@ -49,7 +49,7 @@
 
                 <p><i class="fa  fa-mobile"></i> <span>Mobile:</span> (+34) 940 654 123 651</p>
 
-                <p class="mail"><i class="fa  fa-envelope"></i> <a href="http://movie/contact">Contact form</a></p>
+                <p class="mail"><i class="fa  fa-envelope"></i> <a href="contact.php">Contact form</a></p>
 
             </div> <!-- End Of Col-md-3 -->
         </div> <!-- End Of /.row -->

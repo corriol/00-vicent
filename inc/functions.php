@@ -6,10 +6,17 @@ function generarImagenUrl(string $url, string $alt = "imagen", int $height = 400
 }
  **/
 
-function generarImagenLocal(string $ruta, string $url, string $alt = "imagen",string $class="", int $height = 50, int $width = 50): string
+function generar_imagen_local(string $ruta, string $url, string $alt = "imagen",string $class="",
+                              int $height = 0, int $width = 0): string
 {
 
-    return '<img '.$class.' src="' . $ruta . $url . '" alt="' . $alt . '" height="' . $height . 'px" $width="' . $width . 'px" />';
+    $img = "<img class=\"$class\" src=\"$ruta$url\" alt='$alt'";
+        if ($height > 0)
+            $img .= " height=$height";
+        if ($width > 0)
+            $img .= " width=$width";
+    $img .= "/>";
+    return $img;
 }
 
 ?>

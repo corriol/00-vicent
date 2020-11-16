@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require 'partials/head.partial.php'?>
+    <?php require '_partials/head.partial.php' ?>
 </head>
 <body>
 <header>
-    <?php require 'partials/header.partial.php'?>
+    <?php require '_partials/header.partial.php' ?>
 </header>
 <div class="container">
     <div class="row">
@@ -19,10 +19,11 @@
                                type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
+                    <div class="text-right mb-3"><a class="btn btn-primary" href="/partners-create.php"
+                            title="create a new partner"?><i class="fa fa-plus-circle"></i> New Partner</a></div>
                 </div>
                 <p><?=$error??""?></p>
             </div>
-
             <? if (empty($partners)) : ?>
                 <h3>No s'ha trobat cap element</h3>
             <? else: ?>
@@ -30,16 +31,21 @@
                     <tr>
                         <th>Company</th>
                         <th>Logo</th>
+                        <th>Actions</th>
                     </tr>
-                    <?php foreach ($partners as $partner) {
-                        ?>
+                    <?php foreach ($partners as $partner) : ?>
                         <tr>
-                            <td><?= $partner["name"] ?></td>
-                            <td><img src="<?= PARTNER_PATH . "/" . $partner["logo"] ?>"</td>
+                            <td><?= $partner->getName() ?></td>
+                            <td><img style="height: 40px" src="<?= Partner::PARTNER_PATH . "/" . $partner->getLogo() ?>"</td>
+                            <td>
+                                <a class="btn btn-primary" href="partners-edit.php?id=<?=$partner->getId()?>">
+                                    <i class="fa fa-edit"></i> Edita</a>
+                                <a class="btn btn-warning" href="partners-delete.php?id=<?=$partner->getId()?>">
+                                    <i class="fa fa-remove"></i> Delete</a>
+                            </td>
+
                         </tr>
-                        <?php
-                    }
-                    ?>
+                        <?php endforeach; ?>
                 </table>
             <? endif; ?>
 
@@ -47,6 +53,6 @@
     </div>
     <!-- /.row -->
 </div>
-<?php require 'partials/footer.partial.php'?>
+<?php require '_partials/footer.partial.php' ?>
 </body>
 </html>
