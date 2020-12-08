@@ -1,5 +1,8 @@
 <?php
 
+namespace App;
+
+use PDO;
 
 class Database
 {
@@ -10,7 +13,9 @@ class Database
      */
     public function __construct()
     {
+
         $config = require __DIR__ ."/../config/config.php";
+
 
         $pdo = new PDO($config["database"]["connection"],$config["database"]["username"],
             $config["database"]["password"],$config["database"]["options"] );

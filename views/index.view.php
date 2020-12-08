@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require 'views/_partials/head.partial.php' ?>
-</head>
-<body>
-<header>
-    <?php require 'views/_partials/header.partial.php' ?>
-</header>
+<?php use App\Entity\Movie;
+    use App\Entity\Partner;
+?>
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
             <h2 class="my-4">Genres</h2>
             <div class="list-group">
-                <a href="#" class="list-group-item">Action</a>
-                <a href="#" class="list-group-item">Adventure</a>
-                <a href="#" class="list-group-item">Animation</a>
-                <a href="#" class="list-group-item">Comedy</a>
-                <a href="genre-page.php" class="list-group-item">Crime</a>
-                <a href="genre-page.php" class="list-group-item">Documentary</a>
-                <a href="genre-page.php" class="list-group-item">Drama</a>
-                <a href="#" class="list-group-item">Family</a>
-                <a href="#" class="list-group-item">Fantasy</a>
-                <a href="#" class="list-group-item">Foreign</a>
-                <a href="#" class="list-group-item">History</a>
-                <a href="#" class="list-group-item">Horror</a>
-                <a href="#" class="list-group-item">Music</a>
-                <a href="#" class="list-group-item">Mystery</a>
-                <a href="#" class="list-group-item">Romance</a>
-                <a href="#" class="list-group-item">Science Fiction</a>
-                <a href="#" class="list-group-item">Thriller</a>
-                <a href="#" class="list-group-item">TV Movie</a>
-                <a href="#" class="list-group-item">War</a>
-                <a href="#" class="list-group-item">Western</a>
+                <?php foreach ($genres as $genre) :?>
+                    <a href="genre-page.php?id=<?=$genre->getId();?>" class="list-group-item"><?=$genre->getName()?>
+                        (<?=$genre->getNumberOfMovies()?>)
+                    </a>
+                <?php endforeach;?>
             </div>
         </div>
         <!-- /.col-lg-3 -->
@@ -45,19 +24,19 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item">
-                        <img class="d-block  img-fluid" src="banners/banner01.jpg" alt="First slide" width="900"
+                        <img class="d-block  img-fluid" src="images/banners/banner01.jpg" alt="First slide" width="900"
                              height="350">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block  img-fluid" src="banners/banner02.jpg" alt="Second slide" width="900"
+                        <img class="d-block  img-fluid" src="images/banners/banner02.jpg" alt="Second slide" width="900"
                              height="350">
                     </div>
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="banners/banner03.jpg" alt="Third slide" width="900"
+                        <img class="d-block img-fluid" src="images/banners/banner03.jpg" alt="Third slide" width="900"
                              height="350">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="banners/banner04.jpg" alt="Fourth slide" width="900"
+                        <img class="d-block img-fluid" src="images/banners/banner04.jpg" alt="Fourth slide" width="900"
                              height="350">
                     </div>
 
@@ -85,7 +64,7 @@
                 <?php foreach ($movies as $movie): ?>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="single-page.php"><?= generar_imagen_local(Movie::POSTER_PATH.'/', $movie->getPoster(),
+                            <a href="single-page.php?id=<?= $movie->getId()?>"><?= generar_imagen_local(Movie::POSTER_PATH.'/', $movie->getPoster(),
                                     $movie->getTitle(), "card-img-top", 250, 50) ?></a>
                             <div class="card-body">
                                 <h4 class="card-title">
@@ -123,6 +102,3 @@
         </div>
     </section>
 </div>
-<?php require 'views/_partials/footer.partial.php' ?>
-</body>
-</html>

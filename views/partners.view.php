@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require '_partials/head.partial.php' ?>
-</head>
-<body>
-<header>
-    <?php require '_partials/header.partial.php' ?>
-</header>
+
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="row">
                 <div class="col-12">
-                    <form method="post" action="<? $_SERVER["PHP_SELF"] ?>"
+                    <form method="post" action="<? use App\Entity\Partner;
+
+                    $_SERVER["PHP_SELF"] ?>"
                           class="form-inline  justify-content-center my-4">
                         <input name="text" class="form-control w-75 mr-sm-4"
                                value="<?= ($_POST["text"]) ?? "" ?>"
                                type="text" placeholder="Search" aria-label="Search">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
-                    <div class="text-right mb-3"><a class="btn btn-primary" href="/partners-create.php"
+                    <div class="text-right mb-3"><a class="btn btn-primary" href="/src/Controllers/partners-create.php"
                             title="create a new partner"?><i class="fa fa-plus-circle"></i> New Partner</a></div>
                 </div>
                 <p><?=$error??""?></p>
@@ -53,6 +47,3 @@
     </div>
     <!-- /.row -->
 </div>
-<?php require '_partials/footer.partial.php' ?>
-</body>
-</html>

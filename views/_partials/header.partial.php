@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.php">Movie FX</a>
+        <a class="navbar-brand" href="/">Movie FX</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,11 +10,11 @@
                     <a class="nav-link" href="blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="partners.php">Partners</a>
+                    <a class="nav-link" href="partners">Partners</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="movies.php">Movies</a>
+                    <a class="nav-link" href="movies">Movies</a>
                 </li>
             </ul>
 

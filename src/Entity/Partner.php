@@ -1,9 +1,12 @@
 <?php declare(strict_types=1);
-require_once __DIR__ . '/../Core/Entity.php';
+
+namespace App\Entity;
+
+use App\Core\Entity;
 
 class Partner implements Entity
 {
-    const PARTNER_PATH = 'partners';
+    const PARTNER_PATH = 'images/partners';
 
     private ?int $id = null;
     private string $name;

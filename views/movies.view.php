@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require 'views/_partials/head.partial.php' ?>
-</head>
-<body>
-<header>
-    <?php require 'views/_partials/header.partial.php' ?>
-</header>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form method="post" action="<?php $_SERVER["PHP_SELF"] ?>"
+            <form method="post" action="<?php use App\Entity\Movie;
+
+            $_SERVER["PHP_SELF"] ?>"
                   class="form-inline  justify-content-center my-4">
                 <div class="form-group">
                     <input name="text" class="form-control mr-sm-4"
@@ -35,7 +28,7 @@
                     <button class="form-control btn btn-secondary my-2 my-sm-0" type="submit" name="botonFiltrar">Search</button>
                 </div>
             </form>
-            <div class="text-right mb-3"><a class="btn btn-primary" href="/movies-create.php"
+            <div class="text-right mb-3"><a class="btn btn-primary" href="/movies/create"
                                             title="create a new partner"> <i class="fa fa-plus-circle">
                     </i> New Movie</a>
             </div>
@@ -53,6 +46,7 @@
                     <a href="/movies.php?order=title&&tipo=DESC"><i
                                 class="fa fa-arrow-up"></i></a></th>
                 <th>Tagline</th>
+                <th>Genre</th>
                 <th>Release date<a href="/movies.php?order=release_date&&tipo=ASC"><i
                                 class="fa fa-arrow-down"></i></a>
                     <a href="/movies.php?order=release_date&&tipo=DESC"><i
@@ -62,14 +56,17 @@
             </tr>
             <?php foreach ($movies as $movie) { ?>
                 <tr>
-                    <td> <?= generar_imagen_local(Movie::POSTER_PATH . '/', $movie->getPoster(), $movie->getTitle(), 200, 100) ?> </td>
+                    <td> <?= generar_imagen_local(Movie::POSTER_PATH . '/', $movie->getPoster(),
+                            $movie->getTitle(), 200, 100) ?> </td>
                     <td><?= $movie->getTitle() ?></td>
                     <td><?= $movie->getTagline() ?></td>
+                    <td><?php $genre = $movieModel->getGenre($movie->getGenreId());
+                                echo $genre->getName() ?></td>
                     <td><?= $movie->getReleaseDate()->format("d-M-Y") ?></td>
-                    <td style="width: 140px"><a href="../movies-edit.php?id=<?= $movie->getId() ?>">
+                    <td style="width: 140px"><a href="../src/Controllers/movies-edit.php?id=<?= $movie->getId() ?>">
                             <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
                         </a>
-                        <a href="../movies-delete.php?id=<?= $movie->getId() ?>">
+                        <a href="../src/Controllers/movies-delete.php?id=<?= $movie->getId() ?>">
                             <button type="button" class="btn btn-warning"><i class="fa fa-trash"></i></button>
                         </a>
                     </td>
@@ -82,6 +79,3 @@
 
     <!-- /.row -->
 </div>
-<?php require 'views/_partials/footer.partial.php' ?>
-</body>
-</html>

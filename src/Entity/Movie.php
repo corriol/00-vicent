@@ -1,9 +1,13 @@
 <?php declare( strict_types=1);
-require_once __DIR__ . '/../Core/Entity.php';
+
+namespace App\Entity;
+
+use App\Core\Entity;
+use DateTime;
 
 class Movie implements Entity
 {
-    const POSTER_PATH = 'posters/';
+    const POSTER_PATH = 'images/posters/';
     private ?int $id = null;
     private string $title;
     private string $overview;
@@ -211,7 +215,9 @@ class Movie implements Entity
             "tagline"=>$this->getTagline(),
             "overview"=>$this->getOverview(),
             "poster"=>$this->getPoster(),
-            "release_date"=>$this->getReleaseDate()->format("Y-m-d")
+            "release_date"=>$this->getReleaseDate()->format("Y-m-d"),
+            "title"=>$this->getTitle(),
+            "genre_id"=>$this->getGenreId()
         ];
     }
 }

@@ -1,8 +1,12 @@
 <?php
 
-require_once __DIR__ . '/./Exception/NotFoundException.php';
-require_once __DIR__ . '/./Exception/NotFoundException.php';
-require_once __DIR__ . '/./Entity.php';
+namespace App\Core;
+
+use App\Core\Exception\ModelException;
+use App\Core\Exception\NotFoundException;
+use Exception;
+use PDO;
+use PDOException;
 
 abstract class Model
 {
@@ -157,19 +161,25 @@ abstract class Model
      */
     private function generateSQLUpdate(string $tableName, array $fields): string
     {
+        // modifique l'array llevant-li el camp id
+        $fieldsWithoutId = array_filter($fields, function ($k) {
+            if ($k !== 'id')
+                return true;
 
+        }, ARRAY_FILTER_USE_KEY);
+
+        // en array_map cree un array amb format clau=:clau
         $setClause = implode(', ', array_map(
             function ($k) {
-                if ($k !== 'id')
-                    return sprintf("%s = :%s", $k, $k);
+                return sprintf("%s = :%s", $k, $k);
             },
-            array_keys($fields)
-        ));
+            array_keys($fieldsWithoutId))
+        );
 
         // prepare la consulta preparada SQL d'insercio en la BB.DD.
         $sql = "UPDATE %s SET %s WHERE id = :id";
-        sprintf($sql, $this->tableName, $setClause);
 
+        $sql = sprintf($sql, $this->tableName, $setClause);
 
         return $sql;
     }
@@ -261,6 +271,8 @@ abstract class Model
 
         } catch (PDOException $PDOException) {
             $this->pdo->rollBack();
+            throw new ModelException("Model exception: {$PDOException->getMessage()}");
+
         }
     }
 }

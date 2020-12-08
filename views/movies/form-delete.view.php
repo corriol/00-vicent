@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-6 my-4">
             <?= generar_imagen_local(Movie::POSTER_PATH . '/', $movies->getPoster(),
-                $movies->getTitle() , 'class="rounded w-100"') ?>
+                $movies->getTitle() , "rounded w-100") ?>
         </div>
         <div class="col-lg-9 col-md-6 my-5">
             <h1><?= $movies->getTitle() ?></h1>

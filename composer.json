@@ -1,0 +1,21 @@
+{
+  "name": "vendor_name/00-vicent",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "alumne",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": ["inc/functions.php"]
+  }
+}

@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Entity;
+
+use App\Core\Entity;
 
 class Genre implements Entity
 {

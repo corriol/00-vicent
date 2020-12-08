@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 require 'inc/functions.php';
-require 'src/Movie.php';
+require __DIR__ . '/src/Entity/Movie.php';
 
 $isGetMethod = true;
 $errors = [];

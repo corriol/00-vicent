@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ .'/../Exception/UploadedFileException.php';
-require_once __DIR__ . '/../Exception/UploadedFileNoFileException.php';
+
+namespace App\Utils;
 
 /**
  * Class UploadedFile
