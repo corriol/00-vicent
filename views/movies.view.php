@@ -41,15 +41,15 @@
         <table class="table table-condensed">
             <tr>
                 <th>Poster</th>
-                <th>Title <a href="/movies.php?order=title&&tipo=ASC""><i
+                <th>Title <a href="/movies?order=title&&tipo=ASC""><i
                             class="fa fa-arrow-down"></i></a>
-                    <a href="/movies.php?order=title&&tipo=DESC"><i
+                    <a href="/movies?order=title&&tipo=DESC"><i
                                 class="fa fa-arrow-up"></i></a></th>
                 <th>Tagline</th>
                 <th>Genre</th>
-                <th>Release date<a href="/movies.php?order=release_date&&tipo=ASC"><i
+                <th>Release date<a href="/movies?order=release_date&&tipo=ASC"><i
                                 class="fa fa-arrow-down"></i></a>
-                    <a href="/movies.php?order=release_date&&tipo=DESC"><i
+                    <a href="/movies?order=release_date&&tipo=DESC"><i
                                 class="fa fa-arrow-up"></i></a></th>
                 </th>
                 <th>Actions</th>
@@ -63,10 +63,10 @@
                     <td><?php $genre = $movieModel->getGenre($movie->getGenreId());
                                 echo $genre->getName() ?></td>
                     <td><?= $movie->getReleaseDate()->format("d-M-Y") ?></td>
-                    <td style="width: 140px"><a href="../src/Controllers/movies-edit.php?id=<?= $movie->getId() ?>">
+                    <td style="width: 140px"><a href="/movies/<?= $movie->getId() ?>/edit">
                             <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
                         </a>
-                        <a href="../src/Controllers/movies-delete.php?id=<?= $movie->getId() ?>">
+                        <a href="/movies/delete?id=<?= $movie->getId() ?>">
                             <button type="button" class="btn btn-warning"><i class="fa fa-trash"></i></button>
                         </a>
                     </td>

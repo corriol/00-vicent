@@ -6,8 +6,6 @@ use App\Core\Entity;
 
 class Partner implements Entity
 {
-    const PARTNER_PATH = 'images/partners';
-
     private ?int $id = null;
     private string $name;
     private string $logo;

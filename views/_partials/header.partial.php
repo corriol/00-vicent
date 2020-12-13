@@ -7,14 +7,14 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="blog.html">Blog</a>
+                    <a class="nav-link" href="/blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="partners">Partners</a>
+                    <a class="nav-link" href="/partners">Partners</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="movies">Movies</a>
+                    <a class="nav-link" href="/movies">Movies</a>
                 </li>
             </ul>
 

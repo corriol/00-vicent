@@ -1,7 +1,7 @@
 <!-- FOOTER Start
     ================================================== -->
 
-<footer class="bg-dark text-secondary pt-4">
+<footer class="bg-dark text-secondary pt-4 footer">
     <div class="container">
         <div class="row">
             <div class="col-md-6">

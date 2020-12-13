@@ -1,4 +1,4 @@
-<form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" novalidate>
+<form action="<?= $router->getUrl("partners_update", ["id"=>$partner->getId()]); ?>" method="post" enctype="multipart/form-data" novalidate>
     <input type="hidden" name="id" value="<?=$partner->getId()?>">
     <div class="form-group">
         <label for="name">Name:</label>

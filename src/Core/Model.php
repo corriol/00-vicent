@@ -275,4 +275,43 @@ abstract class Model
 
         }
     }
+
+    /**
+     * @param int $currentPage
+     * @param int $numberOfRecords
+     * @param array $order
+     * @return array
+     */
+    public function findAllPaginated(int $currentPage = 1, int $numberOfRecords = 10, array $order = []){
+        try {
+            $offset = ($currentPage-1) * $numberOfRecords;
+            if (empty($order)) {
+                $stmt = $this->pdo->prepare("
+                    SELECT * 
+                    FROM {$this->tableName}
+                    LIMIT :limit
+                    OFFSET :offset;
+                ");
+            } else {
+                $orderByClause = array_map(function ($v, $k) {
+                    return "$k $v";
+                }, $order, array_keys($order));
+                $orderBy = implode(",", $orderByClause);
+                $stmt = $this->pdo->prepare("
+                    SELECT * 
+                    FROM {$this->tableName} 
+                    ORDER BY $orderBy
+                    LIMIT :limit
+                    OFFSET :offset;
+                ");
+            }
+            $stmt->bindValue('limit',$numberOfRecords,PDO::PARAM_INT);
+            $stmt->bindValue('offset',$offset,PDO::PARAM_INT);
+            $stmt->execute();
+            $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, $this->className);
+            return $stmt->fetchAll();
+        }catch (PDOException $PDOException){
+            throw new ModelException("pagination error: ".$PDOException->getMessage());
+        }
+    }
 }

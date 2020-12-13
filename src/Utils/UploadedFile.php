@@ -2,6 +2,9 @@
 
 namespace App\Utils;
 
+use App\Exception\UploadedFileException;
+use App\Exception\UploadedFileNoFileException;
+
 /**
  * Class UploadedFile
  *
@@ -52,6 +55,8 @@ class UploadedFile
      * @param string $inputName
      * @param int $maxSize
      * @param array $acceptedTypes
+     * @throws UploadedFileException
+     * @throws UploadedFileNoFileException
      */
     public function __construct(string $inputName, int $maxSize = 0, array $acceptedTypes = array())
     {

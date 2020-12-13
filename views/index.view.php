@@ -64,11 +64,11 @@
                 <?php foreach ($movies as $movie): ?>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="single-page.php?id=<?= $movie->getId()?>"><?= generar_imagen_local(Movie::POSTER_PATH.'/', $movie->getPoster(),
+                            <a href="<?=$router->getUrl("movies_show", ["id"=>$movie->getId(), "proves"=>"2"])?>"><?= generar_imagen_local(Movie::POSTER_PATH.'/', $movie->getPoster(),
                                     $movie->getTitle(), "card-img-top", 250, 50) ?></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="single-page.php?id=<?= $movie->getId()?>"><?= $movie->getTitle() ?></a>
+                                    <a href="<?=$router->getUrl("movies_show", ["id"=>$movie->getId()])?>"><?= $movie->getTitle() ?></a>
                                 </h4>
                                 <p class="card-text"><em><?= $movie->getTagline() ?></em></p>
                                 <p class="card-text text-muted"><?= $movie->getReleaseDate()->format("d-M-Y") ?></p>
@@ -92,7 +92,7 @@
                     <div class="row">
                         <?php
                         foreach ($partners as $partner): ?>
-                            <div class="col-3"><?= generar_imagen_local(Partner::PARTNER_PATH.'/', $partner->getLogo(),
+                            <div class="col-3"><?= generar_imagen_local($partnersPath , $partner->getLogo(),
                                     $partner->getName(), "w-50") ?></div>
                         <?php endforeach; ?>
                     </div>
