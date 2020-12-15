@@ -1,6 +1,5 @@
 <?php
 
-use Monolog\Logger;
 
 return [
     "database" =>
@@ -13,7 +12,6 @@ return [
         ]
     ,
     "logfile" => "my_app.log",
-    "loglevel" => Logger::DEBUG,
     "partners_path" => "images/partners/",
     "posters_path" => "images/posters/"
 ];
