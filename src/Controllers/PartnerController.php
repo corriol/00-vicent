@@ -10,7 +10,6 @@ use App\Entity\Partner;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
 use App\Model\PartnerModel;
-use App\Utils\MyLogger;
 use App\Utils\UploadedFile;
 use Exception;
 use PDO;
@@ -84,7 +83,6 @@ class PartnerController extends Controller
                 $errors[] = $uploadedFileNoFileException->getMessage();
             } catch (UploadedFileException | Exception $uploadedFileException ) {
                 $errors[] = $uploadedFileException->getMessage();
-                App::get(MyLogger::class)->error($uploadedFileException->getMessage());
             }
         }
         if (empty($errors)) {

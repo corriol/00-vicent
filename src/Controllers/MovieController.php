@@ -15,7 +15,6 @@ use App\Exception\UploadedFileNoFileException;
 use App\Model\GenreModel;
 use App\Model\MovieModel;
 use App\Core\App;
-use App\Utils\MyLogger;
 use App\Utils\UploadedFile;
 use DateTime;
 use Exception;
@@ -142,7 +141,6 @@ class MovieController extends Controller
                 $movie->setGenreId($genre_id);
 
                 $movieModel->saveTransaction($movie);
-                App::get(MyLogger::class)->info("S'ha creat una nova pel·lícula");
 
             } catch (PDOException | ModelException $e) {
                 $errors[] = "Error: " . $e->getMessage();
