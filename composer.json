@@ -1,23 +1,24 @@
 {
-  "name": "vendor_name/00-vicent",
-  "description": "description",
-  "minimum-stability": "stable",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "alumne",
-      "email": "email@example.com"
-    }
-  ],
-  "require": {
-    "ext-pdo": "*",
-    "ext-json": "*",
-    "monolog/monolog": "^2.2"
-  },
-  "autoload": {
-    "psr-4": {
-      "App\\": "src/"
+    "name": "vendor_name/00-vicent",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "alumne",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*",
+        "ext-json": "*"
     },
-    "files": ["inc/functions.php"]
-  }
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+            "inc/functions.php"
+        ]
+    }
 }
