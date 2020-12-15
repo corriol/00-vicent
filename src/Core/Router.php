@@ -56,7 +56,12 @@ class Router
         die("The path doesn't exist");
     }
 
-
+    /**
+     * @param string $name
+     * @param array $parameters
+     * @return string
+     * @throws NotFoundException
+     */
     public function getUrl(string $name, array $parameters = []): string
     {
         foreach (["GET", "POST"] as $method) {
@@ -129,6 +134,10 @@ class Router
         }
         return $parameters;
     }
+
+    /**
+     * @param string $url
+     */
 
     public function redirect(string $url)
     {

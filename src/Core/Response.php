@@ -26,4 +26,15 @@ class Response
 
         return ob_get_clean();
     }
+
+    /**
+     * @param $element
+     * @return false|string
+     */
+    public function jsonResponse($element)
+    {
+        header('Content-Type: application/json; charset=UTF-8');
+        return json_encode($element);
+
+    }
 }

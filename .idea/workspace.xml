@@ -20,72 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65f4abd031.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65f53c45b2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65f5a018af.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65f64649f7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65f7edd476.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65f9443067.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65fa0114f6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/partners/PTN5fd65fa8dc0f1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3941fbf5e2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3946b18722.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd39471a08f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd394745f1f9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd396326544a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3964f8525f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3965d0c9bf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3968386b9f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd396d0ea896.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd396f103723.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3972d40770.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5fd3974c84a41.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/movies-create-form.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partners-destroy.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partners-store.view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/partners-update.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_app.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_app_critical.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/MyLogger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/movies-destroy.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/00-vicent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/00-vicent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/00-vicent.local-access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/00-vicent.local-access_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MovieController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PartnerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/genre-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/movies-create.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/movies-delete.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/movies-edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/partners-create.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/partners-delete.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/partners-edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/single-page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Entity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Response.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Partner.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Partner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exception/UploadedFileException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/UploadedFileException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/UploadedFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/UploadedFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_layouts/default.layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_layouts/default.layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_partials/footer.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/footer.partial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/_partials/header.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/header.partial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/movies-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies-create.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/movies-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/movies-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies-edit.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/movies.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/movies/form-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies/form-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/movies/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies/form-edit.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-create.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-edit.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners/form-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners/form-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners/form-edit.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/single-page.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/single-page.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners-store.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-store.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +75,8 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
     </include_path>
   </component>
   <component name="ProjectId" id="1i9Jvm22CY2JGEngMZwj0R1s5S3" />
@@ -211,7 +173,10 @@
       <workItem from="1607715275715" duration="2759000" />
       <workItem from="1607847409531" duration="4588000" />
       <workItem from="1607883101480" duration="2883000" />
-      <workItem from="1607890547630" duration="384000" />
+      <workItem from="1607890547630" duration="696000" />
+      <workItem from="1607962156753" duration="2978000" />
+      <workItem from="1608057066026" duration="2915000" />
+      <workItem from="1608060036397" duration="578000" />
     </task>
     <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
       <created>1601315413259</created>
@@ -264,18 +229,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controllers/PartnerController.php</url>
-          <line>174</line>
+          <line>177</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/views/partners/form-delete.view.php</url>
           <line>4</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controllers/PartnerController.php</url>
-          <line>107</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

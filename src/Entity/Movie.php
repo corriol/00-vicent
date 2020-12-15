@@ -4,8 +4,9 @@ namespace App\Entity;
 
 use App\Core\Entity;
 use DateTime;
+use JsonSerializable;
 
-class Movie implements Entity
+class Movie implements Entity, JsonSerializable
 {
     const POSTER_PATH = 'images/posters/';
     private ?int $id = null;
@@ -219,5 +220,14 @@ class Movie implements Entity
             "title"=>$this->getTitle(),
             "genre_id"=>$this->getGenreId()
         ];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function jsonSerialize()
+    {
+        // TODO: Implement jsonSerialize() method.
+        return $this->toArray();
     }
 }

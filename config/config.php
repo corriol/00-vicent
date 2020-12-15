@@ -1,4 +1,7 @@
 <?php
+
+use Monolog\Logger;
+
 return [
     "database" =>
         [
@@ -9,7 +12,8 @@ return [
                 PDO::ATTR_PERSISTENT => true]
         ]
     ,
-    "logfile" => "app.log",
+    "logfile" => "my_app.log",
+    "loglevel" => Logger::DEBUG,
     "partners_path" => "images/partners/",
     "posters_path" => "images/posters/"
 ];

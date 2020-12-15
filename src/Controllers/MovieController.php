@@ -15,6 +15,7 @@ use App\Exception\UploadedFileNoFileException;
 use App\Model\GenreModel;
 use App\Model\MovieModel;
 use App\Core\App;
+use App\Utils\MyLogger;
 use App\Utils\UploadedFile;
 use DateTime;
 use Exception;
@@ -141,6 +142,7 @@ class MovieController extends Controller
                 $movie->setGenreId($genre_id);
 
                 $movieModel->saveTransaction($movie);
+                App::get(MyLogger::class)->info("S'ha creat una nova pel·lícula");
 
             } catch (PDOException | ModelException $e) {
                 $errors[] = "Error: " . $e->getMessage();
@@ -157,37 +159,61 @@ class MovieController extends Controller
             "errors", "genres"));
     }
 
-    public function delete()
+    public function delete(int $id): string
     {
-        $isGetMethod = true;
         $errors = [];
-        $movieModel = new MovieModel(App::get("DB"));
+        $movie = null;
+        $movieModel = App::getModel(MovieModel::class);
 
-        $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+        if (empty($id)) {
+            $errors[] = '404 Not Found';
+        } else {
+            try {
+                $movie = $movieModel->find($id);
+            } catch (NotFoundException $e) {
+                $errors[] = '404 Movie Not Found';
+            }
+        }
+
+        $router = App::get(Router::class);
+        $moviesPath = App::get("config")["posters_path"];
+
+        return $this->response->renderView("movies-delete", "default", compact(
+            "errors", "movie", 'moviesPath', 'router'));
+    }
+
+    public function destroy(): string
+    {
+        $errors = [];
+        $movieModel = App::getModel(MovieModel::class);
+
+        $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
         if (empty($id)) {
             $errors[] = '404 Not Found';
         } else {
             $movie = $movieModel->find($id);
         }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['yes'])) {
-                $isGetMethod = false;
-
-                if (empty($errors)) {
-                    try {
-                        $movie = $movieModel->find($id);
-                        $result = $movieModel->delete($movie);
-                    } catch (PDOException $e) {
-                        $errors[] = "Error: " . $e->getMessage();
-                    }
+        $userAnswer = filter_input(INPUT_POST, "userAnswer");
+        if ($userAnswer === 'yes') {
+            if (empty($errors)) {
+                try {
+                    $movie = $movieModel->find($id);
+                    $result = $movieModel->delete($movie);
+                } catch (PDOException $e) {
+                    $errors[] = "Error: " . $e->getMessage();
                 }
             }
         }
+        else
+            App::get(Router::class)->redirect('movies');
 
-        return $this->response->renderView("movies-delete", "default", compact("isGetMethod",
-            "errors", "movie"));
+        if (empty($errors))
+            App::get(Router::class)->redirect('movies');
+        else
+            return $this->response->renderView("movies-destroy", "default",
+                compact("errors", "movie"));
     }
+
 
     public function edit(int $id)
     {

@@ -8,8 +8,8 @@
                         <li><?= $error ?></li>
                     <?php endforeach; ?>
                 </ul>
-            <?else: ?>
-                <?php require __DIR__ . '/movies/form-delete.view.php' ?>
+            <?php else: ?>
+                <h2>The movie <?= $movie->getTitle() ?> has been deleted successfully!</h2>
             <?php endif; ?>
         </div>
     </div>

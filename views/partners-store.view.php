@@ -9,8 +9,7 @@
                         <li><?= $error ?></li>
                     <? endforeach; ?>
                 </ul>
-
-                <?php require 'views/partners/form-create.view.php'; ?>
+                <?php require __DIR__ . '/partners/form-create.view.php'; ?>
             <?php else: ?>
                 <h2>The partner has been inserted successfully!</h2>
             <? endif ?>
