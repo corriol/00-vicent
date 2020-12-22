@@ -20,32 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
-      <change afterPath="$PROJECT_DIR$/my_app.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_app_critical.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils/MyLogger.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/movies-destroy.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/00-vicent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/00-vicent.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/00-vicent.local-access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/00-vicent.local-access_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PartnerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Entity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Response.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/movies-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/movies.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/movies/form-delete.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies/form-delete.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partners-store.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-store.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +51,6 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
     </include_path>
   </component>
   <component name="ProjectId" id="1i9Jvm22CY2JGEngMZwj0R1s5S3" />
@@ -177,6 +151,7 @@
       <workItem from="1607962156753" duration="2978000" />
       <workItem from="1608057066026" duration="2915000" />
       <workItem from="1608060036397" duration="578000" />
+      <workItem from="1608063155427" duration="944000" />
     </task>
     <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
       <created>1601315413259</created>
@@ -229,7 +204,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controllers/PartnerController.php</url>
-          <line>177</line>
+          <line>175</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
