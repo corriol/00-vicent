@@ -3,6 +3,7 @@
 /* Default routes */
 $router->get("", "DefaultController", "index");
 $router->get("contact", "DefaultController", "contact");
+$router->get("api/demo", "DefaultController", "demo");
 
 
 /* Movies routes */
@@ -19,8 +20,8 @@ $router->post("movies/create", "MovieController", "store");
 $router->get("movies/:id/edit", "MovieController", "edit", ["id" => "number"]);
 $router->post("movies/:id/edit", "MovieController", "edit", ["id" => "number"]);
 
-$router->get("movies/delete", "MovieController", "delete");
-$router->post("movies/delete", "MovieController", "delete");
+$router->get("movies/:id/delete", "MovieController", "delete", ["id"=>"number"], "movies_delete");
+$router->post("movies/delete", "MovieController", "destroy", [],"movies_destroy");
 
 /* Partners routes */
 $router->get("partners", "PartnerController", "index", [], "partners_index");

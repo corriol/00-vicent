@@ -4,7 +4,7 @@ namespace App\Core;
 /**
  * Interface Entity
  */
-interface Entity
+interface Entity 
 {
     /**
      * @return mixed

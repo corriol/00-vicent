@@ -1,12 +1,7 @@
-<?php
-
-use App\Entity\Movie;
-
-?>
-<div class="container flex-fill">
+<div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-6 my-4">
-            <?= generar_imagen_local("/".Movie::POSTER_PATH, $movie->getPoster(),
+            <?= generar_imagen_local("/".$moviesPath, $movie->getPoster(),
                 $movie->getTitle() , "rounded w-100") ?>
         </div>
         <div class="col-lg-9 col-md-6 my-5">
@@ -19,15 +14,12 @@ use App\Entity\Movie;
         </div>
     </div> <!-- /.row -->
 </div> <!-- /.container -->
-<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" novalidate>
+<form action="<?=$router->getUrl("movies_destroy") ?>" method="post" novalidate>
     <input type="hidden" name="id" value="<?= $movie->getId() ?>">
     <div class="form-group text-left">
         <h4>¿Estas seguro que quieres borrar la pelicula " <?= $movie->getTitle() ?> "?</h4>
-        <button type="submit" name="yes" id="yes" class="btn btn-warning btn-lg">Yes</button>
-        <a class="btn btn-lg btn-primary" href="../../movies">
-            No
-        </a>
-
+        <button type="submit" name="userAnswer" value="yes" class="btn btn-danger btn-lg">Yes</button>
+        <button type="submit" name="userAnswer" value="no" class="btn btn-info btn-lg">No</button>
     </div>
 </form>
 <br><br>

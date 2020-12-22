@@ -66,7 +66,7 @@
                     <td style="width: 140px"><a href="/movies/<?= $movie->getId() ?>/edit">
                             <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i></button>
                         </a>
-                        <a href="/movies/delete?id=<?= $movie->getId() ?>">
+                        <a href="<?=$router->getUrl("movies_delete", ["id"=>$movie->getId()]) ?>">
                             <button type="button" class="btn btn-warning"><i class="fa fa-trash"></i></button>
                         </a>
                     </td>

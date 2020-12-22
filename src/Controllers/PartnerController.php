@@ -10,6 +10,7 @@ use App\Entity\Partner;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
 use App\Model\PartnerModel;
+use App\Utils\MyLogger;
 use App\Utils\UploadedFile;
 use Exception;
 use PDO;
@@ -29,7 +30,7 @@ class PartnerController extends Controller
             compact('title', 'partners', 'router', 'partnersPath'));
     }
 
-    function fiter(): string
+    function filter(): string
     {
         $title = "Partners - Movie FX";
 
@@ -60,6 +61,7 @@ class PartnerController extends Controller
     public function store(): string
     {
         $errors = [];
+        $title = "New Partner";
 
         $name = filter_input(INPUT_POST, "name");
         if (empty($name)) {
@@ -67,9 +69,9 @@ class PartnerController extends Controller
         }
 
         // if there are errors we don't upload image file
-        if (empty(!$errors)) {
+        if (empty($errors)) {
             try {
-                $uploadedFile = new UploadedFile("logo");
+                $uploadedFile = new UploadedFile("logo", "300");
                 if ($uploadedFile->validate()) {
                     // we get the path form config file
                     $directory = App::get("config")["partners_path"];
@@ -80,8 +82,9 @@ class PartnerController extends Controller
                 }
             } catch (UploadedFileNoFileException $uploadedFileNoFileException) {
                 $errors[] = $uploadedFileNoFileException->getMessage();
-            } catch (UploadedFileException $uploadedFileException) {
+            } catch (UploadedFileException | Exception $uploadedFileException ) {
                 $errors[] = $uploadedFileException->getMessage();
+                App::get(MyLogger::class)->error($uploadedFileException->getMessage());
             }
         }
         if (empty($errors)) {
@@ -97,7 +100,7 @@ class PartnerController extends Controller
                 $errors[] = 'Error: ' . $e->getMessage();
             }
         }
-        return $this->response->renderView("partners-store", "default", compact('title'));
+        return $this->response->renderView("partners-store", "default", compact('errors', 'title'));
     }
 
     public function delete(int $id): string
