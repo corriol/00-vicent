@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div clas="col-4"></div>
+        <div class="col-4"></div>
         <div class="col-8">
             <h1>New partner</h1>
             <?php if (!empty($errors)): ?>

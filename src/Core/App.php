@@ -16,19 +16,20 @@ class App
     private static array $container = [];
 
     /**
-     * @param $key
-     * @param $value
+     * @param string $key
+     * @param mixed $value
      */
-    public static function bind($key, $value)
+    public static function bind(string $key, $value)
     {
         static::$container[$key] = $value;
     }
 
     /**
-     * @param $key
+     * @param string $key
      * @return mixed
      * @throws Exception
      */
+
     public static function get(string $key)
     {
         if (!array_key_exists($key, static::$container)) {

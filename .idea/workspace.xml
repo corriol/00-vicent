@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.29912186" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,7 +23,52 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós" />
+    <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
+      <change afterPath="$PROJECT_DIR$/phpstan.neon" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/posters/MOV5feafd2832699.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utils/MyMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/00-vicent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/00-vicent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/movies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/partners.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/00-vicent.local-access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/00-vicent.local-access_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app.log" beforeDir="false" afterPath="$PROJECT_DIR$/my_app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PartnerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Entity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Entity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Exception/NotFoundException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Exception/NotFoundException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Genre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Genre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Partner.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Partner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MovieModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MovieModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PartnerModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PartnerModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/UploadedFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/UploadedFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_layouts/default.layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_layouts/default.layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_partials/footer.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/footer.partial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_partials/head.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/head.partial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/contact.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/contact.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/movies.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-create.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners-store.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-store.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners.view.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +97,17 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
     </include_path>
   </component>
   <component name="ProjectId" id="1i9Jvm22CY2JGEngMZwj0R1s5S3" />
@@ -64,9 +124,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -145,6 +206,8 @@
       <workItem from="1607847409531" duration="4588000" />
       <workItem from="1607883101480" duration="2883000" />
       <workItem from="1607890547630" duration="384000" />
+      <workItem from="1609181304571" duration="3128000" />
+      <workItem from="1609229892551" duration="6477000" />
     </task>
     <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
       <created>1601315413259</created>
@@ -191,16 +254,5 @@
     <MESSAGE value="Primer commit seriós" />
     <MESSAGE value="Implementació de l'ordenació" />
     <option name="LAST_COMMIT_MESSAGE" value="Implementació de l'ordenació" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/views/partners/form-delete.view.php</url>
-          <line>4</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

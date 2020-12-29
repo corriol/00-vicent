@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require '_partials/head.partial.php' ?>
-</head>
-<body>
-<header>
-    <?php require '_partials/header.partial.php' ?>
-</header>
 <div class="container">
-    <h1>Formulari de contacte</h1>
+    <h1>Contact form</h1>
     <? if ($_SERVER['REQUEST_METHOD']==='POST' && empty($errors)) :?>
     <h2>Missatge enviat</h2>
-        <p>Nom: <?=$nom ?></p>
+        <p>Nom: <?=$name ?></p>
         <p>Email: <?=$email ?></p>
-        <p>Data de naixement: <?=$data ?></p>
-        <p>Assumpte: <?=$assumpte ?></p>
-        <p>Missatge: <?=$missatge ?></p>
+        <p>Data de naixement: <?=$date->format("Y-m-d") ?></p>
+        <p>Assumpte: <?=$subject ?></p>
+        <p>Missatge: <?=$message ?></p>
     <? else :?>
 
         <?if (!empty($errors)) :?>
@@ -26,26 +17,41 @@
             <? endforeach; ?>
         </ul>
         <? endif ;?>
-        <form action="<? $_SERVER['PHP_SELF'];?>" method="post">
-            Nom i cognom: <input type="text" name="nom"><br><br>
+        <form action="/contact" method="post" class="row">
+            <div class="col-sm-6">
+            <div class="form-group">
+                <label>Nom i cognom:</label>
+                    <input class="form-control" type="text" name="name">
 
-            Data naixement: <input type="date" name="data"><br><br>
+            </div>
 
-            Correu electronic: <input type="email" name="email"><br><br>
+            <div class="form-group">
+                <label>Data naixement:</label>
+                    <input class="form-control" type="date" name="date">
 
-            Asunte: <input type="text" name="assumpte"><br><br>
+            </div>
 
-            Missatge: <input type="text" name="missatge"><br><br>
+            <div class="form-group">
+                <label for="email">Correu electronic:</label>
+                    <input  id="email" class="form-control" type="email" name="email">
 
-            <p>
-                <input type="submit" value="Validar">
-            </p>
+            </div>
+            </div>
+            <div class="col-sm-6">
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                    <input  id="subject" class="form-control" type="text" name="subject">
+
+            </div>
+            <div class="form-group">
+                <label>Missatge:</label>
+                    <textarea  class="form-control" type="text" name="message"></textarea>
+
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Send message">
+            </div>
+            </div>
         </form>
     <? endif; ?>
-
-
-
 </div>
-<?php require '_partials/footer.partial.php' ?>
-</body>
-</html>

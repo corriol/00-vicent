@@ -7,7 +7,7 @@ namespace App\Core;
 interface Entity 
 {
     /**
-     * @return mixed
+     * @return array
      */
     public function toArray(): array;
 }

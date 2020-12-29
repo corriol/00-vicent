@@ -3,6 +3,7 @@
 namespace App\Core\Exception;
 
 use Exception;
+use Throwable;
 
 class NotFoundException extends Exception
 {

@@ -33,24 +33,28 @@ class PartnerController extends Controller
     function filter(): string
     {
         $title = "Partners - Movie FX";
-
+        $partners = [];
         $partnerModel = App::getModel(PartnerModel::class);
+        $router = App::get(Router::class);
+        $partnersPath = App::get("config")["partners_path"];
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $text = filter_input(INPUT_POST, "text", FILTER_SANITIZE_STRING);
             if (!empty($text)) {
                 $title = "Partners - Filtered by ($text) - Movie FX";
-                $partners = $partnerModel->executeQuery("SELECT * FROM partner WHERE name LIKE :text", ["text" => "%$text%"]);
+                $partners = $partnerModel->executeQuery("SELECT * FROM partner WHERE name LIKE :text",
+                    ["text" => "%$text%"]);
             } else
                 $error = "Cal introduir una paraula de búsqueda";
         } else {
             $partners = $partnerModel->findAll();
         }
-        return $this->response->renderView("partners", "default", compact('title', 'partners'));
+        return $this->response->renderView("partners", "default",
+            compact('title', 'partners', 'router', 'partnersPath'));
     }
 
     /**
      * Shows the creation form
-     * @throws \Exception
+     * @throws Exception
      */
     public function create(): string
     {
@@ -62,6 +66,7 @@ class PartnerController extends Controller
     {
         $errors = [];
         $title = "New Partner";
+        $filename = "nofoto.jpg";
 
         $name = filter_input(INPUT_POST, "name");
         if (empty($name)) {
@@ -123,14 +128,15 @@ class PartnerController extends Controller
         $title = "Partner delete - Movie FX";
         $userAnswer = filter_input(INPUT_POST, "userAnswer");
         $router = App::get(Router::class);
+        $partnersPath = App::get("config")["partners_path"];
+        $partner = null;
+
         if (!empty($userAnswer) && $userAnswer == "yes") {
             $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
             $partnerModel = App::getModel(PartnerModel::class);
             $partner = $partnerModel ->find($id);
             if (!$partnerModel->delete($partner))
                 $errors[] = "There were errors deleting entity";
-
-            $partnersPath = App::get("config")["partners_path"];
         }
         else
             $router->redirect('partners');
@@ -141,7 +147,9 @@ class PartnerController extends Controller
 
     /**
      * Shows the edit form
-     *
+     * @param int $id
+     * @return string
+     * @throws Exception
      */
     public function edit(int $id): string
     {

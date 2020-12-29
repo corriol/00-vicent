@@ -15,5 +15,14 @@ return [
     "logfile" => "my_app.log",
     "loglevel" => Logger::DEBUG,
     "partners_path" => "images/partners/",
-    "posters_path" => "images/posters/"
+    "posters_path" => "images/posters/",
+    'mailer' => [
+        'smtp_server' => "smtp.gmail.com",
+        'smtp_port' => 587,
+        'smtp_security' => 'tls',
+        'username' => 'vjorda.pego@gmail.com',
+        'password' => 'fakepassword',
+        'email' => 'vjorda.pego@gmail.com',
+        'name' => 'Vicent Jordà'
+    ],
 ];

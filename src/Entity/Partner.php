@@ -66,7 +66,7 @@ class Partner implements Entity
 
 
     /**
-     * @return mixed
+     * @return array
      */
     public function toArray(): array
     {

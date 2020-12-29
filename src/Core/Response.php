@@ -28,10 +28,10 @@ class Response
     }
 
     /**
-     * @param $element
-     * @return false|string
+     * @param mixed $element
+     * @return string
      */
-    public function jsonResponse($element)
+    public function jsonResponse(mixed $element): string
     {
         header('Content-Type: application/json; charset=UTF-8');
         return json_encode($element);
