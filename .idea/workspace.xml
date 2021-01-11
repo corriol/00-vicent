@@ -24,9 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
+      <change afterPath="$PROJECT_DIR$/src/Core/Helpers/FlashMessage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/00-vicent.local-access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/00-vicent.local-access_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Router.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +168,9 @@
       <workItem from="1609181304571" duration="3128000" />
       <workItem from="1609229892551" duration="6881000" />
       <workItem from="1609239088400" duration="357000" />
-      <workItem from="1610045974752" duration="325000" />
+      <workItem from="1610045974752" duration="925000" />
+      <workItem from="1610047740331" duration="14000" />
+      <workItem from="1610376011668" duration="326000" />
     </task>
     <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
       <created>1601315413259</created>
@@ -215,21 +217,5 @@
     <MESSAGE value="Primer commit seriós" />
     <MESSAGE value="Implementació de l'ordenació" />
     <option name="LAST_COMMIT_MESSAGE" value="Implementació de l'ordenació" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/views/index.view.php</url>
-          <line>66</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Core/Router.php</url>
-          <line>66</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
