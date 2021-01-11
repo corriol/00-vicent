@@ -36,7 +36,7 @@ class FlashMessage
     public static function set(string $key, $value){
         $_SESSION[self::SESSION_KEY][$key] = $value;
     }
-
+d
     /**
      * @param string $key
      */
