@@ -28,7 +28,7 @@
                     <?php foreach ($partners as $partner) : ?>
                         <tr>
                             <td><?= $partner->getName() ?></td>
-                            <td><img class="img-thumbnail" src="<?= $partnersPath . $partner->getLogo() ?>"></td>
+                            <td><img alt="logo" class="img-thumbnail" src="<?= $partnersPath . $partner->getLogo() ?>"></td>
                             <td>
                                 <a class="btn btn-primary" href="<?=$router->getUrl("partners_edit", ["id"=>$partner->getId()])?>">
                                     <i class="fa fa-edit"></i> Edita</a>

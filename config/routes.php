@@ -2,7 +2,10 @@
 
 /* Default routes */
 $router->get("", "DefaultController", "index");
+
 $router->get("contact", "DefaultController", "contact");
+$router->post("contact", "DefaultController", "contact");
+
 $router->get("api/demo", "DefaultController", "demo");
 
 

@@ -30,14 +30,14 @@ class UploadedFile
      * Mida màxima en bytes del fitxer, 0 indica que no hi ha límit.
      */
 
-    private $maxSize;
+    private int $maxSize;
     /**
      * @var array
      *
      * Array amb els MimeType acceptats. Per exemple ['image/jpg', 'image/gif', image/png']. Si l'array és buit
      * s'accepten tots els tipus.
      */
-    private $acceptedTypes;
+    private array $acceptedTypes;
 
     /**
      * UploadedFile constructor. Comprova que s'ha pujat un fitxer, si no llançarà una excepció
@@ -62,7 +62,7 @@ class UploadedFile
     {
         $this->file = $_FILES[$inputName];
         if (empty($this->file))
-            throw new UploadedFileException("Upload file not found");;
+            throw new UploadedFileException("Upload file not found");
 
         if ($this->file["error"] === UPLOAD_ERR_NO_FILE)
             throw new UploadedFileNoFileException("No file uploaded");

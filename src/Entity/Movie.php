@@ -6,16 +6,46 @@ use App\Core\Entity;
 use DateTime;
 use JsonSerializable;
 
+
+/**
+ * Class Movie
+ * @package App\Entity
+ */
+
 class Movie implements Entity, JsonSerializable
 {
+    /**
+     *
+     */
     const POSTER_PATH = 'images/posters/';
+    /**
+     * @var int|null
+     */
     private ?int $id = null;
+    /**
+     * @var string
+     */
     private string $title;
+    /**
+     * @var string
+     */
     private string $overview;
     // private string $release_date;
+    /**
+     * @var DateTime
+     */
     private DateTime $releaseDate;
+    /**
+     * @var string|null
+     */
     private ?string $tagline;
+    /**
+     * @var string
+     */
     private string $poster;
+    /**
+     * @var int
+     */
     private int $genre_id;
 
     /**
@@ -36,6 +66,10 @@ class Movie implements Entity, JsonSerializable
         return $this;
     }
 
+    /**
+     * @param string $name
+     * @param mixed $value
+     */
     public function __set(string $name, $value){
         switch ($name) {
             case "release_date":
@@ -119,31 +153,13 @@ class Movie implements Entity, JsonSerializable
     /**
      * @return string
      */
-    public function getMovieStatus(): string
-    {
-        return $this->movie_status;
-    }
-
-    /**
-     * @param string $movie_status
-     * @return Movie
-     */
-    public function setMovieStatus(string $movie_status): Movie
-    {
-        $this->movie_status = $movie_status;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getTagline(): ?string
     {
         return $this->tagline;
     }
 
     /**
-     * @param string $tagline
+     * @param string|null $tagline
      * @return Movie
      */
     public function setTagline(?string $tagline): Movie
@@ -152,41 +168,6 @@ class Movie implements Entity, JsonSerializable
         return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getVoteAverage(): float
-    {
-        return $this->vote_average;
-    }
-
-    /**
-     * @param float $vote_average
-     * @return Movie
-     */
-    public function setVoteAverage(float $vote_average): Movie
-    {
-        $this->vote_average = $vote_average;
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getVoteCount(): float
-    {
-        return $this->vote_count;
-    }
-
-    /**
-     * @param float $vote_count
-     * @return Movie
-     */
-    public function setVoteCount(float $vote_count): Movie
-    {
-        $this->vote_count = $vote_count;
-        return $this;
-    }
 
     /**
      * @return string
@@ -207,7 +188,7 @@ class Movie implements Entity, JsonSerializable
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function toArray(): array
     {
@@ -224,8 +205,9 @@ class Movie implements Entity, JsonSerializable
 
     /**
      * @return mixed
+     *      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         // TODO: Implement jsonSerialize() method.
         return $this->toArray();

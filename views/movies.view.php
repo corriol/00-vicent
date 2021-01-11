@@ -41,15 +41,15 @@
         <table class="table table-condensed">
             <tr>
                 <th>Poster</th>
-                <th>Title <a href="/movies?order=title&&tipo=ASC""><i
+                <th>Title <a href="/movies?order=title&&tipo=ASC"><i
                             class="fa fa-arrow-down"></i></a>
                     <a href="/movies?order=title&&tipo=DESC"><i
                                 class="fa fa-arrow-up"></i></a></th>
                 <th>Tagline</th>
                 <th>Genre</th>
-                <th>Release date<a href="/movies?order=release_date&&tipo=ASC"><i
+                <th>Release date<a href="/movies?order=release_date&amp;tipo=ASC"><i
                                 class="fa fa-arrow-down"></i></a>
-                    <a href="/movies?order=release_date&&tipo=DESC"><i
+                    <a href="/movies?order=release_date&amp;tipo=DESC"><i
                                 class="fa fa-arrow-up"></i></a></th>
                 </th>
                 <th>Actions</th>

@@ -8,87 +8,114 @@ use App\Core\Router;
 use App\Model\GenreModel;
 use App\Model\MovieModel;
 use App\Model\PartnerModel;
+use App\Utils\MyMail;
+use DateTime;
 use Exception;
 use PDOException;
 use App\Entity\Movie;
 
+/**
+ * Class DefaultController
+ * @package App\Controllers
+ */
 class DefaultController extends Controller
 {
-    public function index(): string {
+    /**
+     * @return string
+     * @throws Exception
+     */
+    public function index(): string
+    {
         try {
             $movieModel = App::getModel(MovieModel::class);
             $movies = $movieModel->findAllPaginated(1, 8,
-                ["release_date"=>"DESC", "title"=>"ASC"]);
+                ["release_date" => "DESC", "title" => "ASC"]);
 
             $partnerModel = App::getModel(PartnerModel::class);
             $partners = $partnerModel->findAll();
 
             $genreModel = App::getModel(GenreModel::class);
-            $genres = $genreModel->findAll(["name"=>"ASC"]);
+            $genres = $genreModel->findAll(["name" => "ASC"]);
 
+
+            shuffle($partners);
+            $partners = array_slice($partners, 0, 4);
+            $title = "Movie FX";
+
+            $router = App::get(Router::class);
+
+            $partnersPath = App::get("config")["partners_path"];
+
+            return $this->response->renderView("index", "default", compact('title', 'partners',
+                'movies', 'genres', 'router', 'partnersPath'));
 
         } catch (PDOException $PDOException) {
-            echo $PDOException->getMessage();
+            return $PDOException->getMessage();
         } catch (Exception $exception) {
-            echo $exception->getMessage();
+            return $exception->getMessage();
         }
 
-
-        shuffle($partners);
-        $partners = array_slice($partners, 0, 4);
-        $title = "Movie FX";
-
-        $router = App::get(Router::class);
-
-        $partnersPath = App::get("config")["partners_path"];
-
-        return $this->response->renderView("index", "default", compact('title', 'partners',
-            'movies', 'genres', 'router', 'partnersPath'));
     }
 
-    public function contact() {
-
-// 2. S'ha enviat el formulari
+    /**
+     * @return string
+     * @throws Exception
+     */
+    public function contact(): string
+    {
+        // 2. S'ha enviat el formulari
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // 3. Validar
-            if (empty($_POST['nom'])) {
+            $name = filter_input(INPUT_POST, "name");
+            $subject = filter_input(INPUT_POST, "subject");
+            $message = filter_input(INPUT_POST, "message");
+            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+            $date = DateTime::createFromFormat("Y-m-d", filter_input(INPUT_POST, "date"));
+
+            if (empty($name)) {
                 $errors[] = "No has posat el nom i cognom";
-            } else {
-                $nom = trim($_POST['nom']);
-                $nom = htmlspecialchars($nom);
             }
 
-            if (empty($_POST['data'])) {
+            if (empty($date)) {
                 $errors[] = "No has posat la data";
-            } else {
-                $data = trim($_POST['data']);
-                $data = htmlspecialchars($data);
             }
 
-            if (empty($_POST['email'])) {
-                $errors[] = "No has posat el correu";
-            } else {
-                $email = trim($_POST['email']);
-                $email = htmlspecialchars($email);
+            if (empty($email)) {
+                $errors[] = "No has posat el correu o és incorrecte";
             }
 
-            if (empty($_POST['assumpte'])) {
+            if (empty($subject)) {
                 $errors[] = "No has posat l'assumpte";
-            } else {
-                $assumpte = trim($_POST['assumpte']);
-                $assumpte = htmlspecialchars($assumpte);
             }
 
-            if (empty($_POST['missatge'])) {
+            if (empty($message)) {
                 $errors[] = "No has posat el missatge";
-            } else {
-                $missatge = trim($_POST['missatge']);
-                $missatge = htmlspecialchars($missatge);
             }
 
-        }
-        require 'views/contact.view.php';
+            if (empty($errors)) {
+                $fullMessage = "$name ($email)\n $subject\n $message";
+                App::get(MyMail::class)->send("contact form", "vjorda.pego@gmail.com", "Vicent", $fullMessage);
+            }
+
+            return $this->response->renderView("contact", "default", compact('errors',
+                'name', 'date', 'subject', 'message', 'email'));
+        } else
+            return $this->response->renderView("contact", "default");
+
+    }
+
+    /**
+     * @return string
+     * @throws \App\Core\Exception\ModelException
+     */
+    public function demo(): string
+    {
+        $movieModel = App::getModel(MovieModel::class);
+        $movies = $movieModel->findAllPaginated(1, 8,
+            ["release_date" => "DESC", "title" => "ASC"]);
+        return $this->response->jsonResponse($movies);
+
     }
 
     public function demo(): string {

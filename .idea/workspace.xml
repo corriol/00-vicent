@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.29912186" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,7 +24,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> temp
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +85,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -92,11 +101,11 @@
       <recent name="$PROJECT_DIR$/src/Model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Core" />
       <recent name="$PROJECT_DIR$/src/Controllers" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/src/Entity" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -157,11 +166,21 @@
       <workItem from="1607715275715" duration="2759000" />
       <workItem from="1607847409531" duration="4588000" />
       <workItem from="1607883101480" duration="2883000" />
+<<<<<<< HEAD
       <workItem from="1607890547630" duration="696000" />
       <workItem from="1607962156753" duration="2978000" />
       <workItem from="1608057066026" duration="2915000" />
       <workItem from="1608060036397" duration="578000" />
       <workItem from="1608063155427" duration="944000" />
+=======
+      <workItem from="1607890547630" duration="384000" />
+      <workItem from="1609181304571" duration="3128000" />
+      <workItem from="1609229892551" duration="6881000" />
+      <workItem from="1609239088400" duration="357000" />
+      <workItem from="1610045974752" duration="925000" />
+      <workItem from="1610047740331" duration="14000" />
+      <workItem from="1610376011668" duration="467000" />
+>>>>>>> temp
     </task>
     <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
       <created>1601315413259</created>
@@ -209,6 +228,7 @@
     <MESSAGE value="Implementació de l'ordenació" />
     <option name="LAST_COMMIT_MESSAGE" value="Implementació de l'ordenació" />
   </component>
+<<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -225,4 +245,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> temp
 </project>

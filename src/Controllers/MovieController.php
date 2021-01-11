@@ -8,20 +8,28 @@ use App\Core\Controller;
 use App\Core\Exception\ModelException;
 use App\Core\Exception\NotFoundException;
 use App\Core\Router;
-
 use App\Entity\Movie;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
 use App\Model\GenreModel;
 use App\Model\MovieModel;
 use App\Core\App;
+use App\Utils\MyLogger;
 use App\Utils\UploadedFile;
 use DateTime;
 use Exception;
 use PDOException;
 
+/**
+ * Class MovieController
+ * @package App\Controllers
+ */
 class MovieController extends Controller
 {
+    /**
+     * @return string
+     * @throws Exception
+     */
     public function index(): string
     {
         $title = "Movies - Movie FX";
@@ -45,20 +53,26 @@ class MovieController extends Controller
             'movieModel', 'errors', 'router'));
     }
 
+    /**
+     * @return string
+     * @throws ModelException
+     */
     public function filter(): string
     {
         // S'executa amb el POST
-
         $title = "Movies - Movie FX";
         $errors = [];
+        $movieModel = null;
+        $movies = null;
+
+        $router = App::get(Router::class);
 
         $text = filter_input(INPUT_POST, "text", FILTER_SANITIZE_STRING);
 
         $tipo_busqueda = filter_input(INPUT_POST, "optradio", FILTER_SANITIZE_STRING);
 
         if (!empty($text)) {
-            $pdo = App::get("DB");
-            $movieModel = new MovieModel($pdo);
+            $movieModel = App::getModel(MovieModel::class);
             if ($tipo_busqueda == "both") {
                 $movies = $movieModel->executeQuery("SELECT * FROM movie WHERE title LIKE :text OR tagline LIKE :text",
                     ["text" => "%$text%"]);
@@ -72,17 +86,20 @@ class MovieController extends Controller
             if ($tipo_busqueda == "tagline") {
                 $movies = $movieModel->executeQuery("SELECT * FROM movie WHERE tagline LIKE :text",
                     ["text" => "%$text%"]);
-
             }
 
         } else {
             $error = "Cal introduir una paraula de búsqueda";
-
         }
+
         return $this->response->renderView("movies", "default", compact('title', 'movies',
-            'movieModel', 'errors'));
+            'movieModel', 'errors', 'router'));
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public function create(): string
     {
         $genreModel = new GenreModel(App::get("DB"));
@@ -91,6 +108,10 @@ class MovieController extends Controller
         return $this->response->renderView("movies-create-form", "default", compact("genres"));
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public function store(): string
     {
         $errors = [];
@@ -102,7 +123,7 @@ class MovieController extends Controller
         $overview = filter_input(INPUT_POST, "overview", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $tagline = filter_input(INPUT_POST, "tagline", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $genre_id = filter_input(INPUT_POST, "genre_id", FILTER_VALIDATE_INT);
-
+        $filename = "nofoto.jpg";
         if (empty($title)) {
             $errors[] = "The name is mandatory";
         }
@@ -141,10 +162,9 @@ class MovieController extends Controller
                 $movie->setGenreId($genre_id);
 
                 $movieModel->saveTransaction($movie);
+                App::get(MyLogger::class)->info("S'ha creat una nova pel·lícula");
 
-            } catch (PDOException | ModelException $e) {
-                $errors[] = "Error: " . $e->getMessage();
-            } catch (Exception $e) {
+            } catch (PDOException | ModelException | Exception $e) {
                 $errors[] = "Error: " . $e->getMessage();
             }
         }
@@ -157,6 +177,14 @@ class MovieController extends Controller
             "errors", "genres"));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @param int $id
+     * @return string
+     * @throws Exception
+     */
+>>>>>>> temp
     public function delete(int $id): string
     {
         $errors = [];
@@ -180,10 +208,22 @@ class MovieController extends Controller
             "errors", "movie", 'moviesPath', 'router'));
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return string
+     * @throws ModelException
+     * @throws NotFoundException
+     */
+>>>>>>> temp
     public function destroy(): string
     {
         $errors = [];
         $movieModel = App::getModel(MovieModel::class);
+<<<<<<< HEAD
+=======
+        $movie = null;
+>>>>>>> temp
 
         $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
         if (empty($id)) {
@@ -210,14 +250,30 @@ class MovieController extends Controller
         else
             return $this->response->renderView("movies-destroy", "default",
                 compact("errors", "movie"));
+<<<<<<< HEAD
     }
 
 
     public function edit(int $id)
+=======
+
+        return "";
+    }
+
+    /**
+     * @param int $id
+     * @return string
+     * @throws ModelException
+     * @throws NotFoundException
+     */
+
+    public function edit(int $id): string
+>>>>>>> temp
     {
         $isGetMethod = true;
         $errors = [];
-        $movieModel = new MovieModel(App::get("DB"));
+        $movieModel = App::getModel(MovieModel::class);
+        $movie = null;
 
         if (empty($id)) {
             $errors[] = '404 Not Found';
@@ -250,9 +306,10 @@ class MovieController extends Controller
                 $errors[] = "The release date is mandatory";
             }
 
+            $poster = filter_input(INPUT_POST, "poster");
+
+
             if (empty($errors)) {
-                //Si no se sube una imagen cogera la que tenemos en el formulario oculta
-                $poster = filter_input(INPUT_POST, "poster");
                 //Gestion de la imagen si se ha subido
                 try {
                     $image = new UploadedFile('poster', 300000, ['image/jpg', 'image/jpeg']);
@@ -292,7 +349,12 @@ class MovieController extends Controller
             "errors", "movie"));
     }
 
-    public function show(int $id)
+    /**
+     * @param int $id
+     * @return string
+     * @throws Exception
+     */
+    public function show(int $id): string
     {
         $errors = [];
         if (!empty($id)) {
@@ -300,13 +362,17 @@ class MovieController extends Controller
                 $movieModel = new MovieModel(App::get("DB"));
                 $movie = $movieModel->find($id);
                 $title = $movie->getTitle() . " (" . $movie->getReleaseDate()->format("Y") . ") - Movie FX";
+                return $this->response->renderView("single-page", "default", compact(
+                    "errors", "movie"));
+
             } catch (NotFoundException $notFoundException) {
                 $errors[] = $notFoundException->getMessage();
             }
-        }
-        return $this->response->renderView("single-page", "default", compact(
-            "errors", "movie"));
+       }
+        else
+            return $this->response->renderView("single-page", "default", compact(
+                "errors"));
 
-
+        return "";
     }
 }

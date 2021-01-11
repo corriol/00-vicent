@@ -29,6 +29,7 @@ abstract class Model
 
     /**
      * Find all instances of className
+     * @param array $order
      * @return array
      * @throws Exception
      */
@@ -75,7 +76,7 @@ abstract class Model
     public function findBy(array $data = [], $operator = "AND"): array
     {
 
-        $sql = "SELECT * FROM $this->table WHERE %s";
+        $sql = "SELECT * FROM {$this->tableName} WHERE %s";
 
         // data = [username => proves]
 
@@ -260,6 +261,7 @@ abstract class Model
 
     /**
      * @param callable $fnExecuteQuerys
+     * @throws ModelException
      */
     public function executeTransaction(callable $fnExecuteQuerys) {
         try {
@@ -281,8 +283,10 @@ abstract class Model
      * @param int $numberOfRecords
      * @param array $order
      * @return array
+     * @throws ModelException
      */
-    public function findAllPaginated(int $currentPage = 1, int $numberOfRecords = 10, array $order = []){
+    public function findAllPaginated(int $currentPage = 1, int $numberOfRecords = 10, array $order = []): array
+    {
         try {
             $offset = ($currentPage-1) * $numberOfRecords;
             if (empty($order)) {

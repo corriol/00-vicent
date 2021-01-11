@@ -75,7 +75,7 @@ class Router
                             // si és un paràmetre de la ruta el substituïm
                             // si no el passarem pel query string
                             if (strpos($route, ":$name") !== false)
-                                $url = str_replace(":$name", $value, $url);
+                                $url = str_replace(":$name", (string)$value, $url);
                             else
                                 $query[$name] = $value;
                         }

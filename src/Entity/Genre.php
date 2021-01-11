@@ -36,9 +36,9 @@ class Genre implements Entity
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -47,7 +47,7 @@ class Genre implements Entity
      * @param int $id
      * @return Genre
      */
-    public function setId(int $id)
+    public function setId(int $id): Genre
     {
         $this->id = $id;
         return $this;
@@ -62,7 +62,7 @@ class Genre implements Entity
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return Genre
      */
     public function setName(string $name): Genre
