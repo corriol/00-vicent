@@ -8,9 +8,13 @@ $router->post("contact", "DefaultController", "contact");
 
 $router->get("api/demo", "DefaultController", "demo");
 
+/* Auth routes */
+$router->get("login", "AuthController", "login");
+$router->post("login", "AuthController", "checkLogin");
+$router->get("logout", "AuthController", "logout");
+
 
 /* Movies routes */
-
 $router->get("movies", "MovieController", "index");
 $router->post("movies", "MovieController", "filter");
 

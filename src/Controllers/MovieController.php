@@ -37,6 +37,8 @@ class MovieController extends Controller
         $movieModel = new MovieModel(App::get("DB"));
         $movies = $movieModel->findAll();
 
+        $message = App::get("flash")->get("message");
+
         $order = filter_input(INPUT_GET, "order", FILTER_SANITIZE_STRING);
 
         if (!empty($_GET['order'])) {
@@ -50,7 +52,7 @@ class MovieController extends Controller
         $router = App::get(Router::class);
 
         return $this->response->renderView("movies", "default", compact('title', 'movies',
-            'movieModel', 'errors', 'router'));
+            'movieModel', 'errors', 'router', 'message'));
     }
 
     /**
