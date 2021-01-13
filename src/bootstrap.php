@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\App;
+use App\Core\Helpers\FlashMessage;
 use App\Core\Response;
 use App\Database;
 use App\Utils\MyLogger;
@@ -20,6 +21,8 @@ App::bind(Response::class, new Response());
 $myLogger = new MyLogger("app");
 $myLogger->pushHandler(new StreamHandler(__DIR__."/../{$config["logfile"]}", $config["loglevel"]));
 App::bind(MyLogger::class, $myLogger);
+
+App::bind("flash", new FlashMessage());
 
 // The load method acts as a factory. We pass the config
 // data and returns a myMail object

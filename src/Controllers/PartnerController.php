@@ -21,13 +21,13 @@ class PartnerController extends Controller
     function index(): string
     {
         $title = "Partners - Movie FX";
-
+        $message = App::get("flash")->get("message", "");
         $partnerModel = App::getModel(PartnerModel::class);
         $router = App::get(Router::class);
         $partnersPath = App::get("config")["partners_path"];
         $partners = $partnerModel->findAll(["name" => "ASC"]);
         return $this->response->renderView("partners", "default",
-            compact('title', 'partners', 'router', 'partnersPath'));
+            compact('title', 'partners', 'router', 'partnersPath', 'message'));
     }
 
     function filter(): string
@@ -66,10 +66,7 @@ class PartnerController extends Controller
     {
         $errors = [];
         $title = "New Partner";
-<<<<<<< HEAD
-=======
         $filename = "nofoto.jpg";
->>>>>>> temp
 
         $name = filter_input(INPUT_POST, "name");
         if (empty($name)) {
@@ -79,7 +76,7 @@ class PartnerController extends Controller
         // if there are errors we don't upload image file
         if (empty($errors)) {
             try {
-                $uploadedFile = new UploadedFile("logo", "300");
+                $uploadedFile = new UploadedFile("logo", 300*1000);
                 if ($uploadedFile->validate()) {
                     // we get the path form config file
                     $directory = App::get("config")["partners_path"];
@@ -102,7 +99,10 @@ class PartnerController extends Controller
                 $partner->setLogo($filename);
 
                 $partnerModel = App::getModel(PartnerModel::class);
-                $partnerModel->save($partner);
+                if ($partnerModel->save($partner)) {
+                    App::get("flash")->set("message", "The partner {$partner->getName()} has been created successfully!");
+                    App::get(Router::class)->redirect("partners");
+                }
 
             } catch (Exception $e) {
                 $errors[] = 'Error: ' . $e->getMessage();

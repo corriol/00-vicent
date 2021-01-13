@@ -177,14 +177,13 @@ class MovieController extends Controller
             "errors", "genres"));
     }
 
-<<<<<<< HEAD
-=======
+
     /**
      * @param int $id
      * @return string
      * @throws Exception
      */
->>>>>>> temp
+
     public function delete(int $id): string
     {
         $errors = [];
@@ -208,22 +207,17 @@ class MovieController extends Controller
             "errors", "movie", 'moviesPath', 'router'));
     }
 
-<<<<<<< HEAD
-=======
     /**
      * @return string
      * @throws ModelException
      * @throws NotFoundException
      */
->>>>>>> temp
+
     public function destroy(): string
     {
         $errors = [];
         $movieModel = App::getModel(MovieModel::class);
-<<<<<<< HEAD
-=======
         $movie = null;
->>>>>>> temp
 
         $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
         if (empty($id)) {
@@ -250,14 +244,6 @@ class MovieController extends Controller
         else
             return $this->response->renderView("movies-destroy", "default",
                 compact("errors", "movie"));
-<<<<<<< HEAD
-    }
-
-
-    public function edit(int $id)
-=======
-
-        return "";
     }
 
     /**
@@ -268,7 +254,6 @@ class MovieController extends Controller
      */
 
     public function edit(int $id): string
->>>>>>> temp
     {
         $isGetMethod = true;
         $errors = [];

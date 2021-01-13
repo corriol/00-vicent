@@ -118,11 +118,4 @@ class DefaultController extends Controller
 
     }
 
-    public function demo(): string {
-        $movieModel = App::getModel(MovieModel::class);
-        $movies = $movieModel->findAllPaginated(1, 8,
-            ["release_date"=>"DESC", "title"=>"ASC"]);
-        return $this->response->jsonResponse($movies);
-
-    }
 }

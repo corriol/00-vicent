@@ -4,6 +4,8 @@ use App\Core\App;
 use App\Core\Request;
 use App\Core\Router;
 
+session_start();
+
 require_once __DIR__ . '/../src/bootstrap.php';
 
 $request = new Request();

@@ -17,6 +17,8 @@ class Response
 
         extract($data);
 
+        // TODO: Integrate the FlashMessage management
+
         ob_start();
         require __DIR__ . "/../../views/$view.view.php";
         $content = ob_get_clean();
