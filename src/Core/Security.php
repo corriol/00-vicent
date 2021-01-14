@@ -14,4 +14,25 @@ class Security
         return false;
 
     }
+
+    public static function isUserGranted($minRole): bool
+    {
+        if ($minRole === 'ROLE_ANONYMOUS')
+            return true;
+        $user = App::get('user');
+        if ($user === null) {
+            App::get(Router::class)->redirect('/login');
+        } else
+            $userRole = $user->getRole();
+
+        // we load the app roles
+        $roles = App::get("config")["security"]["roles"];
+
+        // we get the role values
+        $userRoleValue = $roles[$userRole]; //ROLE_USER => 2
+        $minRoleValue = $roles[$minRole]; //ROLE_ADMIN => 3
+
+        // we return the comparison
+        return ($userRoleValue >= $minRoleValue);
+    }
 }

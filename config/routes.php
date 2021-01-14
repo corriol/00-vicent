@@ -15,20 +15,20 @@ $router->get("logout", "AuthController", "logout");
 
 
 /* Movies routes */
-$router->get("movies", "MovieController", "index");
-$router->post("movies", "MovieController", "filter");
+$router->get("movies", "MovieController", "index", [], "movies_index", "ROLE_USER");
+$router->post("movies", "MovieController", "filter", [], "movies_filter", "ROLE_USER");
 
 $router->get("movies/:id/show", "MovieController", "show",
     ["id" => "number"], "movies_show");
 
-$router->get("movies/create", "MovieController", "create");
-$router->post("movies/create", "MovieController", "store");
+$router->get("movies/create", "MovieController", "create", [], "movies_create", "ROLE_USER");
+$router->post("movies/create", "MovieController", "store", [], "movies_store", "ROLE_USER");
 
 $router->get("movies/:id/edit", "MovieController", "edit", ["id" => "number"]);
 $router->post("movies/:id/edit", "MovieController", "edit", ["id" => "number"]);
 
-$router->get("movies/:id/delete", "MovieController", "delete", ["id"=>"number"], "movies_delete");
-$router->post("movies/delete", "MovieController", "destroy", [],"movies_destroy");
+$router->get("movies/:id/delete", "MovieController", "delete", ["id"=>"number"], "movies_delete", "ROLE_ADMIN");
+$router->post("movies/delete", "MovieController", "destroy", [],"movies_destroy", "ROLE_ADMIN");
 
 /* Partners routes */
 $router->get("partners", "PartnerController", "index", [], "partners_index");
