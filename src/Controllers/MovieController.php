@@ -8,6 +8,7 @@ use App\Core\Controller;
 use App\Core\Exception\ModelException;
 use App\Core\Exception\NotFoundException;
 use App\Core\Router;
+use App\Core\Security;
 use App\Entity\Movie;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
@@ -33,6 +34,10 @@ class MovieController extends Controller
     public function index(): string
     {
         $title = "Movies - Movie FX";
+
+        if (!Security::isAuthenticatedUser())
+            App::get(Router::class)->redirect('login');
+
         $errors = [];
         $movieModel = new MovieModel(App::get("DB"));
         $movies = $movieModel->findAll();
