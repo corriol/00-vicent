@@ -21,7 +21,7 @@ class Security
             return true;
         $user = App::get('user');
         if ($user === null) {
-            App::get(Router::class)->redirect('/login');
+            App::get(Router::class)->redirect('login');
         } else
             $userRole = $user->getRole();
 

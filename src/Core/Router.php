@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Core;
 
+use App\Core\Exception\AuthorizationException;
 use App\Core\Exception\NotFoundException;
 
 /**
@@ -63,7 +64,7 @@ class Router
         }
         //route és la ruta de la taula de rutes.
         // /movies/:id/show
-        die("The path doesn't exist");
+        throw new NotFoundException("The path doesn't exist");
     }
 
     /**

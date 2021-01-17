@@ -1,10 +1,9 @@
 <?php
 
 
-namespace App\Core;
+namespace App\Core\Exception;
 
-
-use \Exception;
+use Exception;
 use Throwable;
 
 class AuthorizationException extends Exception

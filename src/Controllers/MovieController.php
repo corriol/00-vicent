@@ -350,16 +350,11 @@ class MovieController extends Controller
     {
         $errors = [];
         if (!empty($id)) {
-            try {
                 $movieModel = new MovieModel(App::get("DB"));
                 $movie = $movieModel->find($id);
                 $title = $movie->getTitle() . " (" . $movie->getReleaseDate()->format("Y") . ") - Movie FX";
                 return $this->response->renderView("single-page", "default", compact(
                     "errors", "movie"));
-
-            } catch (NotFoundException $notFoundException) {
-                $errors[] = $notFoundException->getMessage();
-            }
        }
         else
             return $this->response->renderView("single-page", "default", compact(

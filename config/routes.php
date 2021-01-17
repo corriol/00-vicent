@@ -6,7 +6,7 @@ $router->get("", "DefaultController", "index");
 $router->get("contact", "DefaultController", "contact");
 $router->post("contact", "DefaultController", "contact");
 
-$router->get("api/demo", "DefaultController", "demo");
+$router->get("api/v1/movies", "ApiController", "index");
 
 /* Auth routes */
 $router->get("login", "AuthController", "login");
