@@ -17,7 +17,11 @@ class Response
 
         extract($data);
 
-        // TODO: Integrate the FlashMessage management
+
+        // Change: Integrate the FlashMessage management
+        $flashMessage = App::get("flash");
+        $router = App::get(Router::class);
+        $user = App::get('user');
 
         ob_start();
         require __DIR__ . "/../../views/$view.view.php";

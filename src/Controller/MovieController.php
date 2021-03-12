@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controllers;
+namespace App\Controller;
 
 
 use App\Core\Controller;
@@ -23,7 +23,7 @@ use PDOException;
 
 /**
  * Class MovieController
- * @package App\Controllers
+ * @package App\Controller
  */
 class MovieController extends Controller
 {
@@ -42,7 +42,6 @@ class MovieController extends Controller
         $movieModel = new MovieModel(App::get("DB"));
         $movies = $movieModel->findAll();
 
-        $message = App::get("flash")->get("message");
 
         $order = filter_input(INPUT_GET, "order", FILTER_SANITIZE_STRING);
 
@@ -57,7 +56,7 @@ class MovieController extends Controller
         $router = App::get(Router::class);
 
         return $this->response->renderView("movies", "default", compact('title', 'movies',
-            'movieModel', 'errors', 'router', 'message'));
+            'movieModel', 'errors', 'router' ));
     }
 
     /**

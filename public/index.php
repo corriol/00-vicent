@@ -12,8 +12,6 @@ require_once __DIR__ . '/../src/bootstrap.php';
 $request = new Request();
 $url = $request->getPath();
 
-
-
 $router = new Router();
 require_once __DIR__ . '/../config/routes.php';
 

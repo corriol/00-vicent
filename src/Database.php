@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Core\Exception\AppException;
+use Exception;
 use PDO;
 
 class Database
@@ -16,11 +18,14 @@ class Database
 
         $config = require __DIR__ ."/../config/config.php";
 
+		try {
+	        $pdo = new PDO($config["database"]["connection"],$config["database"]["username"],
+    	        $config["database"]["password"],$config["database"]["options"] );
 
-        $pdo = new PDO($config["database"]["connection"],$config["database"]["username"],
-            $config["database"]["password"],$config["database"]["options"] );
-
-        $this->connection = $pdo;
+        	$this->connection = $pdo;
+        } catch (Exception $e) {
+        	die($e->getMessage());
+        }
     }
 
     /**

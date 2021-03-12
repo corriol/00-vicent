@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controller;
 
 use App\Core\App;
 use App\Core\Controller;
@@ -16,7 +16,7 @@ use App\Entity\Movie;
 
 /**
  * Class DefaultController
- * @package App\Controllers
+ * @package App\Controller
  */
 class DefaultController extends Controller
 {
