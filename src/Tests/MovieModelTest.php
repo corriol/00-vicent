@@ -9,7 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 class MovieModelTest extends TestCase
 {
-
+    /**
+     * @covers
+     */
     public function testValidate()
     {
         $pdoDummy = $this->createPartialMock(PDO::class, []);
@@ -30,6 +32,9 @@ class MovieModelTest extends TestCase
         $this->assertCount(0, $errors);
     }
 
+    /**
+     * @covers
+     */
     public function testValidateWithFails()
     {
         $pdoDummy = $this->createPartialMock(PDO::class, []);
