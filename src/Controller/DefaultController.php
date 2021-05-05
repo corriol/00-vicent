@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controller;
 
 use App\Core\App;
 use App\Core\Controller;
+use App\Core\Exception\ModelException;
 use App\Core\Router;
 use App\Model\GenreModel;
 use App\Model\MovieModel;
@@ -12,11 +13,10 @@ use App\Utils\MyMail;
 use DateTime;
 use Exception;
 use PDOException;
-use App\Entity\Movie;
 
 /**
  * Class DefaultController
- * @package App\Controllers
+ * @package App\Controller
  */
 class DefaultController extends Controller
 {
@@ -46,7 +46,7 @@ class DefaultController extends Controller
 
             $partnersPath = App::get("config")["partners_path"];
 
-            return $this->response->renderView("index", "default", compact('title', 'partners',
+            return $this->renderView("index", "default", compact('title', 'partners',
                 'movies', 'genres', 'router', 'partnersPath'));
 
         } catch (PDOException $PDOException) {
@@ -98,24 +98,10 @@ class DefaultController extends Controller
                 App::get(MyMail::class)->send("contact form", "vjorda.pego@gmail.com", "Vicent", $fullMessage);
             }
 
-            return $this->response->renderView("contact", "default", compact('errors',
+            return $this->renderView("contact", "default", compact('errors',
                 'name', 'date', 'subject', 'message', 'email'));
         } else
-            return $this->response->renderView("contact", "default");
+            return $this->renderView("contact", "default");
 
     }
-
-    /**
-     * @return string
-     * @throws \App\Core\Exception\ModelException
-     */
-    public function demo(): string
-    {
-        $movieModel = App::getModel(MovieModel::class);
-        $movies = $movieModel->findAllPaginated(1, 8,
-            ["release_date" => "DESC", "title" => "ASC"]);
-        return $this->response->jsonResponse($movies);
-
-    }
-
 }

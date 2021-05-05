@@ -73,7 +73,7 @@ abstract class Model
      * @param string $operator
      * @return array
      */
-    public function findBy(array $data = [], $operator = "AND"): array
+    public function findBy(array $data = [], string $operator = "AND"): array
     {
 
         $sql = "SELECT * FROM {$this->tableName} WHERE %s";
@@ -318,4 +318,25 @@ abstract class Model
             throw new ModelException("pagination error: ".$PDOException->getMessage());
         }
     }
+
+    public function loadData(array $data, Entity $entity): Entity
+    {
+        foreach ($data as $key=>$value) {
+            if (property_exists($this->className, $key)){
+                //$entity::_set($key, $value);
+                $func="set".ucwords($key, '_');
+                $func=str_replace("_","", $func );
+                //var_dump($func);
+                if (method_exists($this->className, $func)) {
+                    $entity->$func($value);
+                }
+      /*      } elseif (strpos($key, "date")>0) {
+                var_dump($key);
+                $entity->$key = $value; */
+            }
+        }
+        return $entity;
+    }
+
+    abstract public function validate(Entity $entity):array;
 }

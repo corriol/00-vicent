@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Core\Entity;
 use DateTime;
+use Exception;
 use JsonSerializable;
 
 
@@ -32,9 +33,9 @@ class Movie implements Entity, JsonSerializable
     private string $overview;
     // private string $release_date;
     /**
-     * @var DateTime
+     * @var string
      */
-    private DateTime $releaseDate;
+    private string $release_date;
     /**
      * @var string|null
      */
@@ -70,13 +71,14 @@ class Movie implements Entity, JsonSerializable
      * @param string $name
      * @param mixed $value
      */
-    public function __set(string $name, $value){
+   /* public function __set(string $name, $value){
+
         switch ($name) {
             case "release_date":
                 $this->releaseDate = DateTime::createFromFormat("Y-m-d", $value ?? date("Y-m-d"));
                 break;
         }
-    }
+    }*/
 
     /**
      * @return int
@@ -135,18 +137,18 @@ class Movie implements Entity, JsonSerializable
     /**
      * @return DateTime
      */
-    public function getReleaseDate(): DateTime
+    public function getReleaseDate(): string
     {
-        return $this->releaseDate;
+        return $this->release_date;
     }
 
     /**
-     * @param DateTime $releaseDate
+     * @param string $releaseDate
      * @return Movie
      */
-    public function setReleaseDate(DateTime $releaseDate): Movie
+    public function setReleaseDate(string $releaseDate): Movie
     {
-        $this->releaseDate = $releaseDate;
+        $this->release_date = $releaseDate;
         return $this;
     }
 
@@ -188,6 +190,14 @@ class Movie implements Entity, JsonSerializable
     }
 
     /**
+     * @return DateTime
+     * @throws Exception
+     */
+    public function getReleaseDateObj(): DateTime {
+        return new DateTime($this->getReleaseDate());
+    }
+
+    /**
      * @return array
      */
     public function toArray(): array
@@ -197,7 +207,7 @@ class Movie implements Entity, JsonSerializable
             "tagline"=>$this->getTagline(),
             "overview"=>$this->getOverview(),
             "poster"=>$this->getPoster(),
-            "release_date"=>$this->getReleaseDate()->format("Y-m-d"),
+            "release_date"=>$this->getReleaseDate(),
             "title"=>$this->getTitle(),
             "genre_id"=>$this->getGenreId()
         ];

@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         <label for="release_date">Release date:</label>
-        <input id="release_date" class="form-control" type="date" name="release_date" value="<?=$movie->getReleaseDate()->format("Y-m-d")?>" required>
+        <input id="release_date" class="form-control" type="date" name="release_date" value="<?=$movie->getReleaseDateObj()->format("Y-m-d")?>" required>
     </div>
     <div class="form-group">
         <label for="poster">Logo:</label>

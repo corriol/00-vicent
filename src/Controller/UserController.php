@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controller;
 
 use App\Core\App;
 use App\Core\Controller;
@@ -9,25 +9,23 @@ use App\Database;
 use App\Entity\Partner;
 use App\Exception\UploadedFileException;
 use App\Exception\UploadedFileNoFileException;
-use App\Model\PartnerModel;
+use App\Model\UserModel;
 use App\Utils\MyLogger;
 use App\Utils\UploadedFile;
 use Exception;
 use PDO;
-use PDOException;
 
-class PartnerController extends Controller
+class UserController extends Controller
 {
     function index(): string
     {
-        $title = "Partners - Movie FX";
-        $message = App::get("flash")->get("message", "");
-        $partnerModel = App::getModel(PartnerModel::class);
-        $router = App::get(Router::class);
-        $partnersPath = App::get("config")["partners_path"];
-        $partners = $partnerModel->findAll(["name" => "ASC"]);
-        return $this->response->renderView("partners", "default",
-            compact('title', 'partners', 'router', 'partnersPath', 'message'));
+        $title = "Users";
+
+        $userModel = App::getModel(UserModel::class);
+
+        $users = $userModel->findAll(["username" => "ASC"]);
+        return $this->response->renderView("users/index", "admin",
+            compact('users'));
     }
 
     function filter(): string

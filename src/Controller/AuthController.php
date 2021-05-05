@@ -1,35 +1,37 @@
 <?php
 
 
-namespace App\Controllers;
+namespace App\Controller;
 
 
 use App\Core\App;
 use App\Core\Controller;
 use App\Core\Router;
+use App\Core\Security;
 use App\Model\UserModel;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function login(): string
     {
-        $message = App::get('flash')->get("message", "");
-        return $this->response->renderView('auth/login', 'default', compact('message'));
+        return $this->renderView('auth/login', 'default');
     }
 
-    public function checkLogin()
+    public function checkLogin(): void
     {
-        $messages = [];
         $username = filter_input(INPUT_POST, 'username');
         $password = filter_input(INPUT_POST, 'password');
         if (!empty($username) && !empty($password)) {
             $userModel = App::getModel(UserModel::class);
             $user = $userModel->findOneBy(["username"=>$username]);
             if (!empty($user)) {
-                if ($password == $user->getPassword()) {
+                if (Security::checkPassword($password, $user->getPassword() )) {
                     $_SESSION["loggedUser"] = $user->getId();
                     App::get('flash')->set("message", "S'ha iniciat sessió");
-                    App::get(Router::class)->redirect("movies");
+                    if ($user->getRole() === "ROLE_ADMIN") {
+                        App::get(Router::class)->redirect("admin/movies");
+                    }
+                    App::get(Router::class)->redirect("");
                 }
             }
         }

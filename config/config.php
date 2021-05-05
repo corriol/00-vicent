@@ -6,15 +6,18 @@ use Monolog\Logger;
 return [
     "database" =>
         [
-            "connection" => "mysql:host=localhost;dbname=movies;charset=utf8",
+            "connection" => "mysql:host=mysql-server;dbname=movies;charset=utf8",
             "username" => "dbuser",
             "password" => "1234",
             "options" => [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_PERSISTENT => true]
         ]
     ,
-    "logfile" => "my_app.log",
+    "logfile" => "app.log",
     "loglevel" => Logger::DEBUG,
+    // les rutes les posem sense la barra inicial perquè les usem en dos àmbits
+    // 1. sistema de fitxers: ruta relativa
+    // 2. web: url relativa a l'arrel on caldrà posar la barra
     "partners_path" => "images/partners/",
     "posters_path" => "images/posters/",
     'mailer' => [

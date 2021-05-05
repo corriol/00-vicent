@@ -35,4 +35,15 @@ class Security
         // we return the comparison
         return ($userRoleValue >= $minRoleValue);
     }
+
+    public static function encode(string $password): string {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
+    public static function checkPassword(string $password, string $userPassword): bool {
+        return password_verify($password, $userPassword);
+    }
+
+
+
+
 }

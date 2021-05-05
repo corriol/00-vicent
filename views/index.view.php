@@ -7,7 +7,7 @@
             <h2 class="my-4">Genres</h2>
             <div class="list-group">
                 <?php foreach ($genres as $genre) :?>
-                    <a href="genre-page.php?id=<?=$genre->getId();?>" class="list-group-item"><?=$genre->getName()?>
+                    <a href="<?=$router->getUrl("movies_genre_list", ["id" => $genre->getId()]);?>" class="list-group-item"><?=$genre->getName()?>
                         (<?=$genre->getNumberOfMovies()?>)
                     </a>
                 <?php endforeach;?>
@@ -53,8 +53,8 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <form class="form-inline  justify-content-center my-4">
-                        <input class="form-control w-75 mr-sm-4" type="text" placeholder="Search" aria-label="Search">
+                    <form class="form-inline justify-content-center my-4" action="<?=$router->getUrl("movies_search")?>">
+                        <input class="form-control w-75 mr-sm-4" type="text" name="q" placeholder="Search" aria-label="Search">
                         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
@@ -71,7 +71,7 @@
                                     <a href="<?=$router->getUrl("movies_show", ["id"=>$movie->getId()])?>"><?= $movie->getTitle() ?></a>
                                 </h4>
                                 <p class="card-text"><em><?= $movie->getTagline() ?></em></p>
-                                <p class="card-text text-muted"><?= $movie->getReleaseDate()->format("d-M-Y") ?></p>
+                                <p class="card-text text-muted"><?= $movie->getReleaseDateObj()->format("d-M-Y") ?></p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">★ ★ ★ ★ ☆</small>

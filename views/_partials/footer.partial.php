@@ -38,7 +38,7 @@
                         </a>
                     </li>
                 </ul>    <!-- End Of /.social-icon -->
-
+                <p><small><?= microtime(true)-$start?></></small></p>
             </div> <!-- End Of /.Col-md-4 -->
             <div class="col-md-6">
                 <h4>GET IN TOUCH</h4>

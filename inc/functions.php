@@ -26,4 +26,9 @@ function generar_imagen_local(string $ruta, string $url, string $alt = "imagen",
     return $img;
 }
 
+function getQueryText() {
+    $queryText = filter_input(INPUT_GET, "q", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    return $queryText;
+}
+
 

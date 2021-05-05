@@ -4,9 +4,13 @@ namespace App\Core;
 
 abstract class Controller
 {
-    public Response $response;
+    private Response $response;
 
     public function __construct() {
         $this->response = App::get(Response::class);
+    }
+
+    public function renderView(string $view, string $layout = 'default', array $data = []): string {
+        return $this->response->renderView($view, $layout, $data);
     }
 }

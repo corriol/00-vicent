@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controllers;
+namespace App\Controller;
 
 
 use App\Core\Controller;
@@ -23,10 +23,12 @@ use PDOException;
 
 /**
  * Class MovieController
- * @package App\Controllers
+ * @package App\Controller
  */
 class MovieController extends Controller
 {
+    const POSTER_MAX_SIZE = 3000*1024; //3000KB
+
     /**
      * @return string
      * @throws Exception
@@ -35,14 +37,9 @@ class MovieController extends Controller
     {
         $title = "Movies - Movie FX";
 
-        if (!Security::isAuthenticatedUser())
-            App::get(Router::class)->redirect('login');
-
         $errors = [];
-        $movieModel = new MovieModel(App::get("DB"));
+        $movieModel = App::getModel(MovieModel::class);
         $movies = $movieModel->findAll();
-
-        $message = App::get("flash")->get("message");
 
         $order = filter_input(INPUT_GET, "order", FILTER_SANITIZE_STRING);
 
@@ -54,10 +51,9 @@ class MovieController extends Controller
                 $errors[] = $e->getMessage();
             }
         }
-        $router = App::get(Router::class);
 
-        return $this->response->renderView("movies", "default", compact('title', 'movies',
-            'movieModel', 'errors', 'router', 'message'));
+        return $this->renderView("movies", "admin", compact('title', 'movies',
+            'movieModel', 'errors'));
     }
 
     /**
@@ -99,9 +95,40 @@ class MovieController extends Controller
             $error = "Cal introduir una paraula de búsqueda";
         }
 
-        return $this->response->renderView("movies", "default", compact('title', 'movies',
+        return $this->renderView("movies", "admin", compact('title', 'movies',
             'movieModel', 'errors', 'router'));
     }
+
+
+    /**
+     * @return string
+     * @throws ModelException
+     */
+    public function search(): string
+    {
+        // Aquest formulari en gestiona des de diverses pàgines ja que es troba en la capçalera de la web.
+        // Sempre renderitzarà la mateixa vista, per això cal assegurar-se que totes les variables i objectes
+        // existeixen en qualsevol dels dos possible camins.
+        $movies = null;
+        $movieModel = null;
+        $errors = [];
+
+        $queryText = filter_input(INPUT_GET, "q", FILTER_SANITIZE_SPECIAL_CHARS);
+
+        $title = "Movies search - $queryText";
+
+        if (empty($queryText)) {
+            $errors[] = "You must include a query text";
+        }
+        else {
+            $movieModel = App::getModel(MovieModel::class);
+            $movies = $movieModel->executeQuery("SELECT * FROM movie WHERE title LIKE :text OR tagline LIKE :text",
+                ["text" => "%$queryText%"]);
+        }
+        return $this->renderView("movies-list", "default", compact('title', 'movies',
+            'movieModel', 'errors'));
+    }
+
 
     /**
      * @return string
@@ -109,10 +136,10 @@ class MovieController extends Controller
      */
     public function create(): string
     {
-        $genreModel = new GenreModel(App::get("DB"));
+        $genreModel = App::getModel(GenreModel::class);
         $genres = $genreModel->findAll(["name" => "ASC"]);
 
-        return $this->response->renderView("movies-create-form", "default", compact("genres"));
+        return $this->renderView("movies-create-form", "default", compact("genres"));
     }
 
     /**
@@ -122,34 +149,30 @@ class MovieController extends Controller
     public function store(): string
     {
         $errors = [];
-        $pdo = App::get("DB");
-        $genreModel = new GenreModel($pdo);
+
+        $genreModel = App::getModel(GenreModel::class);
         $genres = $genreModel->findAll(["name" => "ASC"]);
 
-        $title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        /*$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $overview = filter_input(INPUT_POST, "overview", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $tagline = filter_input(INPUT_POST, "tagline", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         $genre_id = filter_input(INPUT_POST, "genre_id", FILTER_VALIDATE_INT);
-        $filename = "nofoto.jpg";
-        if (empty($title)) {
-            $errors[] = "The name is mandatory";
-        }
-        if (empty($overview)) {
-            $errors[] = "The overview is mandatory";
-        }
+        $filename = "nofoto.jpg";*/
 
-        $releaseDate = DateTime::createFromFormat("Y-m-d", $_POST["release_date"]);
-        if (empty($releaseDate)) {
-            $errors[] = "The release date is mandatory";
-        }
+        $movieModel = App::getModel(MovieModel::class);
+
+        $movie = $movieModel->loadData($_POST, new Movie());
+
+        $errors = $movieModel->validate($movie);
 
         // If there are errors we don't need to upload the poster.
         if (empty($errors)) {
             try {
-                $uploadedFile = new UploadedFile("poster", 2000 * 1024, ["image/jpeg", "image/jpg"]);
+                $uploadedFile = new UploadedFile("poster", self::POSTER_MAX_SIZE, ["image/jpeg", "image/jpg"]);
                 if ($uploadedFile->validate()) {
                     $uploadedFile->save(Movie::POSTER_PATH, uniqid("MOV"));
                     $filename = $uploadedFile->getFileName();
+                    $movie->setPoster($filename);
                 }
             } catch (Exception $exception) {
                 $errors[] = "Error uploading file ($exception)";
@@ -158,7 +181,8 @@ class MovieController extends Controller
 
         if (empty($errors)) {
             try {
-                $movieModel = new MovieModel($pdo);
+                $movieModel = App::get(MovieModel::class);
+          /*
                 $movie = new Movie();
 
                 $movie->setTitle($title);
@@ -167,7 +191,7 @@ class MovieController extends Controller
                 $movie->setTagline($tagline);
                 $movie->setPoster($filename);
                 $movie->setGenreId($genre_id);
-
+            */
                 $movieModel->saveTransaction($movie);
                 App::get(MyLogger::class)->info("S'ha creat una nova pel·lícula");
 
@@ -180,7 +204,7 @@ class MovieController extends Controller
             App::get(Router::class)->redirect("movies");
         }
 
-        return $this->response->renderView("movies-create", "default", compact(
+        return $this->renderView("movies-create", "default", compact(
             "errors", "genres"));
     }
 
@@ -210,7 +234,7 @@ class MovieController extends Controller
         $router = App::get(Router::class);
         $moviesPath = App::get("config")["posters_path"];
 
-        return $this->response->renderView("movies-delete", "default", compact(
+        return $this->renderView("movies-delete", "default", compact(
             "errors", "movie", 'moviesPath', 'router'));
     }
 
@@ -249,7 +273,7 @@ class MovieController extends Controller
         if (empty($errors))
             App::get(Router::class)->redirect('movies');
         else
-            return $this->response->renderView("movies-destroy", "default",
+            return $this->renderView("movies-destroy", "default",
                 compact("errors", "movie"));
     }
 
@@ -277,6 +301,17 @@ class MovieController extends Controller
             $isGetMethod = false;
 
             $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
+            if (empty($id))
+                throw new NotFoundException();
+
+            $movie = $movieModel->find($id);
+
+            $movie = $movieModel->loadData($_POST, $movie);
+
+            $errors = $movieModel->validate($movie);
+
+            /*
+            $id = filter_input(INPUT_POST, "id", FILTER_VALIDATE_INT);
             if (empty($id)) {
                 $errors[] = "Wrong ID";
             }
@@ -300,11 +335,11 @@ class MovieController extends Controller
 
             $poster = filter_input(INPUT_POST, "poster");
 
-
+            */
             if (empty($errors)) {
                 //Gestion de la imagen si se ha subido
                 try {
-                    $image = new UploadedFile('poster', 300000, ['image/jpg', 'image/jpeg']);
+                    $image = new UploadedFile('poster', self::POSTER_MAX_SIZE, ['image/jpg', 'image/jpeg']);
                     if ($image->validate()) {
                         $image->save(Movie::POSTER_PATH);
                         $poster = $image->getFileName();
@@ -320,14 +355,14 @@ class MovieController extends Controller
             if (empty($errors)) {
                 try {
                     // Instead of creating a new object we load the current data object.
-                    $movie = $movieModel->find($id);
+                    //$movie = $movieModel->find($id);
 
                     //then we set the new values
-                    $movie->setTitle($title);
+                 /*   $movie->setTitle($title);
                     $movie->setOverview($overview);
                     $movie->setReleaseDate($releaseDate);
                     $movie->setTagline($tagline);
-                    $movie->setPoster($poster);
+                    $movie->setPoster($poster); */
 
                     $movieModel->update($movie);
 
@@ -337,7 +372,7 @@ class MovieController extends Controller
             }
         }
 
-        return $this->response->renderView("movies-edit", "default", compact("isGetMethod",
+        return $this->renderView("movies-edit", "default", compact("isGetMethod",
             "errors", "movie"));
     }
 
@@ -352,14 +387,30 @@ class MovieController extends Controller
         if (!empty($id)) {
                 $movieModel = new MovieModel(App::get("DB"));
                 $movie = $movieModel->find($id);
-                $title = $movie->getTitle() . " (" . $movie->getReleaseDate()->format("Y") . ") - Movie FX";
-                return $this->response->renderView("single-page", "default", compact(
+                $title = $movie->getTitle() . " (" . $movie->getReleaseDateObj()->format("Y") . ") - Movie FX";
+                return $this->renderView("single-page", "default", compact(
                     "errors", "movie"));
        }
         else
-            return $this->response->renderView("single-page", "default", compact(
+            return $this->renderView("single-page", "default", compact(
                 "errors"));
-
-        return "";
     }
+
+    /**
+     * @param int $id
+     * @return string
+     * @throws Exception
+     */
+    public function listByGenre(int $id): string
+    {
+
+        $genre = App::getModel(GenreModel::class)->find($id);
+        $movies = App::getModel(MovieModel::class)->findBy(["genre_id" => $id]);
+
+        $title = $genre->getName() . " movies";
+
+        return $this->renderView("movies-list", "default", compact('title', 'movies',
+            'genre'));
+    }
+
 }

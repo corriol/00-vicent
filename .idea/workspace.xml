@@ -1,250 +1,248 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="SPLITTER_PROPORTION" value="0.29912186" />
-    <option name="SCOPE_TYPE" value="3" />
-  </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="Primer commit seriós">
-<<<<<<< HEAD
+    <list default="true" id="d66bf421-3b6d-4d1e-9997-15aa98786512" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tests/MovieModelTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tests/PartnerModelTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/_layouts/admin.layout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/movies-list.view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/00-vicent.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> temp
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/00-vicent.local-access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/00-vicent.local-access_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/00-vicent.local-error_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/00-vicent.local-error_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ApiController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AuthController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DefaultController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MovieController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Helpers/FlashMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Helpers/FlashMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Security.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Security.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/GenreModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/GenreModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MovieModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MovieModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/PartnerModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/PartnerModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_layouts/default.layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_layouts/default.layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_partials/alert.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/alert.partial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_partials/footer.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/footer.partial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/_partials/header.partial.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/_partials/header.partial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/movies.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/movies/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies/form-edit.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-create.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners-store.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners-store.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partners/form-create.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/partners/form-create.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/single-page.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/single-page.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="composer.json" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpDebugGeneral">
+    <xdebug_debug_ports port="9000" />
+  </component>
   <component name="PhpServers">
     <servers>
-      <server host="00-vicent.local" id="2975ce75-266d-4a28-be10-0399244d6a2a" name="00-vicent.local" />
+      <server host="localhost" id="ab4138c8-4ce5-4771-a506-8e21b942b1c4" name="Movies Docker" port="8080" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/html/public" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWebServerValidation" deployment_server_id="ad5e1443-d680-43a6-84be-04dcc658356a" path_to_validation_script="$PROJECT_DIR$/public" selected_validation_type="REMOTE" web_path_to_validation_script="http://127.0.0.1/" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="web-server">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1i9Jvm22CY2JGEngMZwj0R1s5S3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
   </component>
+  <component name="ProjectId" id="1pk15GBjbgmh4CXoypeAbTiohsS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="Docker Compose" />
+    <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Docker Compose" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/phpunit.xml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/views" />
-      <recent name="$PROJECT_DIR$/views/_layouts" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/Controllers" />
-      <recent name="$PROJECT_DIR$/src/Model" />
+      <recent name="$PROJECT_DIR$/views/users" />
+      <recent name="$PROJECT_DIR$/src/Controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Core" />
-      <recent name="$PROJECT_DIR$/src/Controllers" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/src/Tests" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
+  <component name="RunManager" selected="PHPUnit.MovieModelTest.testValidateWithFails">
+    <configuration name="MovieModelTest.testValidateWithFails" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\MovieModelTest" file="$PROJECT_DIR$/src/Tests/MovieModelTest.php" method="testValidateWithFails" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/src/Tests" />
+      <method v="2" />
+    </configuration>
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Movies Docker" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="NOT_FILTER" server_name="Movies Docker" session_id="PHPSTORM">
+      <method v="2" />
+    </configuration>
+    <configuration name="movies-webserver" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="web-server" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.movies-webserver" />
+      <item itemvalue="PHP Remote Debug.Movies Docker" />
+      <item itemvalue="PHPUnit.Tests" />
+      <item itemvalue="PHPUnit.MovieModelTest.testValidateWithFails" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.MovieModelTest.testValidateWithFails" />
+        <item itemvalue="PHPUnit.Tests" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44a836b6-6014-4dda-9481-aa6c9c7ff62c" name="Default Changelist" comment="" />
-      <created>1601314110890</created>
+      <changelist id="d66bf421-3b6d-4d1e-9997-15aa98786512" name="Default Changelist" comment="" />
+      <created>1615712091813</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1601314110890</updated>
-      <workItem from="1601314113687" duration="797000" />
-      <workItem from="1601315337616" duration="238000" />
-      <workItem from="1601459811359" duration="52000" />
-      <workItem from="1601487315247" duration="2745000" />
-      <workItem from="1601580503678" duration="3678000" />
-      <workItem from="1601837149834" duration="810000" />
-      <workItem from="1601838011571" duration="907000" />
-      <workItem from="1601907204275" duration="1366000" />
-      <workItem from="1602766733050" duration="2047000" />
-      <workItem from="1602773678164" duration="1838000" />
-      <workItem from="1603126213905" duration="2938000" />
-      <workItem from="1603540395088" duration="16000" />
-      <workItem from="1604001201138" duration="18000" />
-      <workItem from="1604250021519" duration="6813000" />
-      <workItem from="1604333798414" duration="1862000" />
-      <workItem from="1604392328624" duration="3883000" />
-      <workItem from="1604398407814" duration="4535000" />
-      <workItem from="1604425323193" duration="2456000" />
-      <workItem from="1604736749418" duration="6584000" />
-      <workItem from="1604745500906" duration="1544000" />
-      <workItem from="1605043706288" duration="3895000" />
-      <workItem from="1605113990298" duration="745000" />
-      <workItem from="1605115909527" duration="1843000" />
-      <workItem from="1605117808624" duration="2194000" />
-      <workItem from="1605555984549" duration="3887000" />
-      <workItem from="1605560896611" duration="228000" />
-      <workItem from="1605645493303" duration="7086000" />
-      <workItem from="1605731043269" duration="3735000" />
-      <workItem from="1605965649432" duration="97000" />
-      <workItem from="1606064795306" duration="1546000" />
-      <workItem from="1606067455289" duration="1803000" />
-      <workItem from="1606071690355" duration="1023000" />
-      <workItem from="1606074677295" duration="321000" />
-      <workItem from="1606245416331" duration="1350000" />
-      <workItem from="1606494809647" duration="24000" />
-      <workItem from="1606841052296" duration="3328000" />
-      <workItem from="1606848039290" duration="2484000" />
-      <workItem from="1606941712079" duration="1395000" />
-      <workItem from="1607004626746" duration="3783000" />
-      <workItem from="1607102884385" duration="1377000" />
-      <workItem from="1607106147780" duration="2673000" />
-      <workItem from="1607416762928" duration="1355000" />
-      <workItem from="1607626587584" duration="4824000" />
-      <workItem from="1607696192575" duration="5782000" />
-      <workItem from="1607715275715" duration="2759000" />
-      <workItem from="1607847409531" duration="4588000" />
-      <workItem from="1607883101480" duration="2883000" />
-<<<<<<< HEAD
-      <workItem from="1607890547630" duration="696000" />
-      <workItem from="1607962156753" duration="2978000" />
-      <workItem from="1608057066026" duration="2915000" />
-      <workItem from="1608060036397" duration="578000" />
-      <workItem from="1608063155427" duration="944000" />
-=======
-      <workItem from="1607890547630" duration="384000" />
-      <workItem from="1609181304571" duration="3128000" />
-      <workItem from="1609229892551" duration="6881000" />
-      <workItem from="1609239088400" duration="357000" />
-      <workItem from="1610045974752" duration="925000" />
-      <workItem from="1610047740331" duration="14000" />
-      <workItem from="1610376011668" duration="467000" />
->>>>>>> temp
+      <updated>1615712091813</updated>
+      <workItem from="1615712098861" duration="24000" />
+      <workItem from="1616007873035" duration="3017000" />
+      <workItem from="1616091020364" duration="6880000" />
+      <workItem from="1616099889454" duration="2067000" />
+      <workItem from="1616112211285" duration="2995000" />
+      <workItem from="1616115229553" duration="3625000" />
+      <workItem from="1616526604320" duration="1594000" />
+      <workItem from="1616699689227" duration="2640000" />
+      <workItem from="1616951571819" duration="1007000" />
+      <workItem from="1616952621090" duration="11000" />
+      <workItem from="1616952836887" duration="207000" />
+      <workItem from="1620147929505" duration="6329000" />
+      <workItem from="1620208533919" duration="2685000" />
     </task>
-    <task id="LOCAL-00001" summary="Canvi del títol de la pàgina del blog">
-      <created>1601315413259</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1601315413259</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Primer commit seriós">
-      <created>1601908358222</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1601908358223</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Implementació de l'ordenació">
-      <created>1602766840842</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1602766840843</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Canvi del títol de la pàgina del blog" />
-    <MESSAGE value="Primer commit seriós" />
-    <MESSAGE value="Implementació de l'ordenació" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementació de l'ordenació" />
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/movies@Tests.xml" NAME="Tests Coverage Results" MODIFIED="1620150873502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="../../../projectes/movies/phpunit.xml" NAME="phpunit.xml" MODIFIED="1620150079844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-<<<<<<< HEAD
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controllers/PartnerController.php</url>
-          <line>175</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/views/partners/form-delete.view.php</url>
-          <line>4</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-=======
->>>>>>> temp
 </project>

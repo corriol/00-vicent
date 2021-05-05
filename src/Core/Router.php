@@ -5,6 +5,7 @@ namespace App\Core;
 
 use App\Core\Exception\AuthorizationException;
 use App\Core\Exception\NotFoundException;
+use App\Controller\DefaultController;
 
 /**
  * Class Router
@@ -54,7 +55,9 @@ class Router
                 $role = $data['role'];
                     if (!Security::isUserGranted($role))
                         throw new AuthorizationException('You do not have access permissions');
-                $class = "\\App\\Controllers\\" . $data["controller"];
+
+                $class = "\\App\\Controller\\" . $data["controller"];
+                //$class = $data["controller"];
                 $instance = new $class;
                 $action = $data["action"];
                 $parameters = $this->extractParameters($requestedUrl, $route);
@@ -153,6 +156,28 @@ class Router
     public function redirect(string $url)
     {
         header("Location: /$url");
+        exit();
+    }
+
+    /**
+     * @param string $url
+     */
+
+    public function redirectByName(string $name, array $params=[])
+    {
+        /*$path = "";
+        foreach (["GET", "POST"] as $method) {
+            foreach ($this->routes[$method] as $route => $data) {
+                if ($name === $data["name"]) {
+                    $path = $route;
+                }
+            }
+        }
+        if (strlen($path) !== 0)*/
+        $url = $this->getUrl($name, $params);
+        //$this->redirect($url);
+        // TODO: Resolve why the slash isn't necessary
+        header("Location: $url");
         exit();
     }
 }
