@@ -17,11 +17,18 @@ class Response
 
         extract($data);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 146d23b85006288681382f395542c8798ef76e87
         // Change: Integrate the FlashMessage management
         $flashMessage = App::get("flash");
         $router = App::get(Router::class);
         $user = App::get('user');
+<<<<<<< HEAD
         $config = App::get("config");
+=======
+>>>>>>> 146d23b85006288681382f395542c8798ef76e87
 
         ob_start();
         require __DIR__ . "/../../views/$view.view.php";

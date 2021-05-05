@@ -55,9 +55,13 @@ class Router
                 $role = $data['role'];
                     if (!Security::isUserGranted($role))
                         throw new AuthorizationException('You do not have access permissions');
+<<<<<<< HEAD
 
                 $class = "\\App\\Controller\\" . $data["controller"];
                 //$class = $data["controller"];
+=======
+                $class = "\\App\\Controller\\" . $data["controller"];
+>>>>>>> 146d23b85006288681382f395542c8798ef76e87
                 $instance = new $class;
                 $action = $data["action"];
                 $parameters = $this->extractParameters($requestedUrl, $route);

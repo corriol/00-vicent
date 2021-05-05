@@ -14,7 +14,11 @@ class AuthController extends Controller
 {
     public function login(): string
     {
+<<<<<<< HEAD:src/Controller/AuthController.php
         return $this->renderView('auth/login', 'default');
+=======
+        return $this->response->renderView('auth/login', 'default');
+>>>>>>> 146d23b85006288681382f395542c8798ef76e87:src/Controllers/AuthController.php
     }
 
     public function checkLogin(): void

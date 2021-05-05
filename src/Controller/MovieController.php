@@ -41,6 +41,10 @@ class MovieController extends Controller
         $movieModel = App::getModel(MovieModel::class);
         $movies = $movieModel->findAll();
 
+<<<<<<< HEAD:src/Controller/MovieController.php
+=======
+
+>>>>>>> 146d23b85006288681382f395542c8798ef76e87:src/Controllers/MovieController.php
         $order = filter_input(INPUT_GET, "order", FILTER_SANITIZE_STRING);
 
         if (!empty($_GET['order'])) {
@@ -52,8 +56,13 @@ class MovieController extends Controller
             }
         }
 
+<<<<<<< HEAD:src/Controller/MovieController.php
         return $this->renderView("movies", "admin", compact('title', 'movies',
             'movieModel', 'errors'));
+=======
+        return $this->response->renderView("movies", "default", compact('title', 'movies',
+            'movieModel', 'errors', 'router' ));
+>>>>>>> 146d23b85006288681382f395542c8798ef76e87:src/Controllers/MovieController.php
     }
 
     /**
