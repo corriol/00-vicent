@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\App\Core\Router</OriginalElement>
+  <nodes>
+    <node x="-307.0" y="-127.0">\App\Core\Router</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="49.5" y="17.0" />
+  <SelectedNodes>
+    <node>\App\Core\Router</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constants</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

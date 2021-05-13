@@ -17,6 +17,17 @@
         <label for="release_date">Release date:</label>
         <input id="release_date" class="form-control" type="date" name="release_date" value="<?=$movie->getReleaseDateObj()->format("Y-m-d")?>" required>
     </div>
+
+    <div class="form-group">
+        <label for="genre_id">Genre</label>
+        <select class="form-control" name="genre_id" id="genre_id">
+        <?php foreach ($genres as $genre): ?>
+
+            <option <?=($genre->getId()===$movie->getGenreId())?"selected":"" ?> value="<?=$genre->getId() ?>"><?=$genre->getName() ?></option>
+        <?php endforeach; ?>
+        </select>
+    </div>
+
     <div class="form-group">
         <label for="poster">Logo:</label>
         <input type="hidden" name="poster" value="<?= $movie->getPoster() ?>">

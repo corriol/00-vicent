@@ -7,6 +7,8 @@ use App\Core\Exception\NotFoundException;
 use Exception;
 use PDO;
 use PDOException;
+use ReflectionClass;
+use ReflectionProperty;
 
 abstract class Model
 {
@@ -323,12 +325,24 @@ abstract class Model
     {
         foreach ($data as $key=>$value) {
             if (property_exists($this->className, $key)){
+                // comprovem el tipus
+                $rp = new ReflectionProperty($this->className, $key);
+                $propertyType = $rp->getType()->getName();
+
                 //$entity::_set($key, $value);
                 $func="set".ucwords($key, '_');
                 $func=str_replace("_","", $func );
                 //var_dump($func);
                 if (method_exists($this->className, $func)) {
-                    $entity->$func($value);
+                    //segons el tipus fem el casting
+                    switch ($propertyType) {
+                        case "int":
+                            $entity->$func((int)$value);
+                            break;
+                        default:
+                            $entity->$func($value);
+                    }
+
                 }
       /*      } elseif (strpos($key, "date")>0) {
                 var_dump($key);

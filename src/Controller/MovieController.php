@@ -41,11 +41,6 @@ class MovieController extends Controller
         $movieModel = App::getModel(MovieModel::class);
         $movies = $movieModel->findAll();
 
-<<<<<<< HEAD:src/Controller/MovieController.php
-=======
-
->>>>>>> 146d23b85006288681382f395542c8798ef76e87:src/Controllers/MovieController.php
-        $order = filter_input(INPUT_GET, "order", FILTER_SANITIZE_STRING);
 
         if (!empty($_GET['order'])) {
             $orderBy = [$_GET["order"] => $_GET["tipo"]];
@@ -56,13 +51,8 @@ class MovieController extends Controller
             }
         }
 
-<<<<<<< HEAD:src/Controller/MovieController.php
         return $this->renderView("movies", "admin", compact('title', 'movies',
             'movieModel', 'errors'));
-=======
-        return $this->response->renderView("movies", "default", compact('title', 'movies',
-            'movieModel', 'errors', 'router' ));
->>>>>>> 146d23b85006288681382f395542c8798ef76e87:src/Controllers/MovieController.php
     }
 
     /**
@@ -171,6 +161,8 @@ class MovieController extends Controller
         $movieModel = App::getModel(MovieModel::class);
 
         $movie = $movieModel->loadData($_POST, new Movie());
+
+        //var_dump($movie);
 
         $errors = $movieModel->validate($movie);
 
@@ -298,6 +290,7 @@ class MovieController extends Controller
         $isGetMethod = true;
         $errors = [];
         $movieModel = App::getModel(MovieModel::class);
+        $genres = App::getModel(GenreModel::class)->findAll(["name"=>"desc"]);
         $movie = null;
 
         if (empty($id)) {
@@ -317,6 +310,7 @@ class MovieController extends Controller
 
             $movie = $movieModel->loadData($_POST, $movie);
 
+            var_dump($movie);
             $errors = $movieModel->validate($movie);
 
             /*
@@ -382,7 +376,7 @@ class MovieController extends Controller
         }
 
         return $this->renderView("movies-edit", "default", compact("isGetMethod",
-            "errors", "movie"));
+            "errors", "genres", "movie"));
     }
 
     /**

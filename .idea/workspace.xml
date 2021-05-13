@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66bf421-3b6d-4d1e-9997-15aa98786512" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Rating.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/RatingModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tests/UseCase/RateMovieTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UseCase/RateMovie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpunit.cache/test-results" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.cache/test-results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Response.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/MovieModelTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/MovieModelTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/movies/form-edit.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/movies/form-edit.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +190,10 @@
       <workItem from="1620147929505" duration="6329000" />
       <workItem from="1620208533919" duration="2685000" />
       <workItem from="1620216137040" duration="842000" />
-      <workItem from="1620238982962" duration="5851000" />
+      <workItem from="1620238982962" duration="6178000" />
+      <workItem from="1620400532173" duration="22000" />
+      <workItem from="1620815744358" duration="3976000" />
+      <workItem from="1620930859187" duration="4636000" />
     </task>
     <servers />
   </component>
